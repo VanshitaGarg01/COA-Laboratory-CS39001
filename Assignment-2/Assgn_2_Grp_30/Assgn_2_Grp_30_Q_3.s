@@ -69,6 +69,6 @@ sanity_fail:
     syscall                                 # print limit_msg on the console
 
 exit:
-    li      $v0, 10	                        # syscall for exit
+    li      $v0, 10                         # syscall for exit
     syscall
     
