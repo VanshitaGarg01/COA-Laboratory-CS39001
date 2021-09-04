@@ -12,7 +12,7 @@ perfect_msg:                                                    # Message when t
     .asciiz "Entered number is a perfect number.\n"
 not_perfect_msg:                                                # Message when the number is not perfect
     .asciiz "Entered number is not a perfect number.\n"
-limit_msg:                                                      # Error message when sanity check fails
+limit_msg:                                                      # Error message when sanity check fails, n should be > 0
     .asciiz "Exiting, number entered is not positive.\n"
 
 # Code Segment
@@ -33,7 +33,7 @@ main:
     li      $v0, 5                          # $v0 = 5, 5 is the system call code to read an integer from the console
     syscall                                 # syscall to read n
     move    $s0, $v0                        # move n to $s0
-    blez    $s0, sanity_fail                # if n < 0 then jump to sanity_fail
+    blez    $s0, sanity_fail                # if n <= 0 then jump to sanity_fail
 
     li      $t0, 1                          # initialize i = 1
     li      $s1, 0                          # initialize sum = 0

@@ -12,7 +12,7 @@ prime_msg:                                                              # Messag
     .asciiz "Entered number is a PRIME number.\n"
 composite_msg:                                                          # Message when the number is composite
     .asciiz "Entered number is a COMPOSITE number.\n"
-limit_msg:                                                              # Error message when sanity check fails
+limit_msg:                                                              # Error message when sanity check fails, n should be >= 10
     .asciiz "Exiting, number entered is less than 10.\n"
 
 # Code Segment

@@ -10,7 +10,7 @@ prompt1:                                                            # Prompt for
     .asciiz "Enter the first positive integer: "            
 prompt2:                                                            # Prompt for 2nd integer input
     .asciiz "Enter the second positive integer: "
-error_msg:                                                          # Error message when sanity check fails
+error_msg:                                                          # Error message when sanity check fails, both numbers should be >= 0
     .asciiz "Exiting, Both entered numbers should be positive.\n"
 output_msg:                                                         # Display message for output
     .asciiz "GCD of the two integers is:  "
