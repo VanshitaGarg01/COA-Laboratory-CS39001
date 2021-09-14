@@ -7,7 +7,7 @@
 # Data Segment
     .data
 array_prompt:                                           # Prompt for array input
-    .asciiz "Enter 10 integers:\n"
+    .asciiz "Enter 10 integers: (each integer on a new line)\n"
 k_prompt:                                               # Prompt for accepting k
     .asciiz "Enter the value of k: "
 sorted_msg:                                             # Display message for printing the sorted array
@@ -80,7 +80,12 @@ print_result:
 
     j       exit                            # jump to exit
 
+
 # Function to find the k-th largest number in the array
+# For this function,
+# $a0 is address of first element of array
+# $a1 is n
+# $a2 is k
 find_k_largest:
     bgt     $a2, $a1, sanity_fail           # if k > n, sanity check fails
     addi    $sp, $sp, -16                   # we need to save the arguments and return address on the stack, so allocate memory for them
@@ -100,6 +105,7 @@ find_k_largest:
     lw      $ra, 0($sp)                     # load the return address into $ra
     addi    $sp, $sp, 16                    # restore the stack pointer
     jr      $ra                             # jump to return address
+
 
 # Function to sort the array
 # $t0 stores address of first element of array
@@ -169,6 +175,7 @@ sanity_fail:
     li      $v0, 4
     la      $a0, error_msg
     syscall                                 # print error_msg on the console
+
 
 exit:
     li      $v0, 10                         
