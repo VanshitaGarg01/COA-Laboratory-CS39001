@@ -12,6 +12,10 @@ A_msg:                                                              # Message fo
     .asciiz "\nMatrix A: \n"
 B_msg:                                                              # Message for displaying matrix B
     .asciiz "\nMatrix B (Transpose of matrix A): \n"
+m_lezero_msg:                                                       # Error message if m <= 0 
+    .asciiz "Error, m must be positive.\n"
+n_lezero_msg:                                                       # Error message if n <= 0 
+    .asciiz "Error, n must be positive.\n"
 whitespace:                                                         # Whitespace character
     .asciiz " "
 newline:                                                            # Newline character
@@ -40,10 +44,14 @@ main:
     move    $a0, $v0                            # $a0 = argument for pushToStack function
     jal     pushToStack                         # push m on the stack
 
+    blez    $v0, m_lezero                       # if m <= 0, it is invalid
+
     li      $v0, 5  
     syscall                                     # read n
     move    $a0, $v0                            # $a0 = argument for pushToStack function
     jal     pushToStack                         # push n on the stack
+
+    blez    $v0, n_lezero                       # if n <= 0, it is invalid
 
     li      $v0, 5  
     syscall                                     # read a
@@ -223,6 +231,17 @@ exit_transpose_inner_loop:
 return_from_transpose:
     jr      $ra                                 # jump to return address
 
+m_lezero:
+    li      $v0, 4
+    la      $a0, m_lezero_msg
+    syscall                                     # print m_lezero_msg on the console
+    j       exit
+
+n_lezero:
+    li      $v0, 4
+    la      $a0, n_lezero_msg
+    syscall                                     # print n_lezero_msg on the console
+    j       exit
 
 exit:
     li      $v0, 10                         

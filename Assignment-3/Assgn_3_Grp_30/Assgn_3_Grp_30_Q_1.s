@@ -143,7 +143,7 @@ break2:
 
 loop3:
     beq     $t1, $zero, exit_multiply_booth         # check n == 0, if yes, jump to exit_multiply_booth
-    addi    $t1, $t1, -1                            # n <- n-1
+    addi    $t1, $t1, -1                            # n <-- n-1
     li      $t3, 1                                  # $t3 = 1
     and     $t3, $t3, $v0                           # if LSB of $v0 is 0, $t3 = 0, else $t3 = 1
     sll     $t3, $t3, 1                             # $t3 <-- ($t3 << 1)

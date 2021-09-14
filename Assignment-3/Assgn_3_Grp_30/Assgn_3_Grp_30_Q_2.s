@@ -13,7 +13,9 @@ k_prompt:                                               # Prompt for accepting k
 sorted_msg:                                             # Display message for printing the sorted array
     .asciiz "Sorted array: "
 error_msg:                                              # Error message when sanity check fails
-    .asciiz "Error, k cannot be greater than n\n"
+    .asciiz "Error, k cannot be greater than n.\n"
+k_lezero_msg:                                           # Error message when k <= 0
+    .asciiz "Error, k must be positive.\n"
 output_msg:                                             # Display message for output
     .asciiz "k-th largest number is: "
 whitespace:                                             # Whitespace character
@@ -56,6 +58,8 @@ read_k:
     syscall                                 # print k_prompt on the console
     li      $v0, 5
     syscall                                 # read the value of k, gets stored in $v0
+
+    blez    $v0, k_lezero                   # if k <= 0, it is invalid
 
 call_function:
     move    $s1, $v0                        # store k in $s1
@@ -175,7 +179,13 @@ sanity_fail:
     li      $v0, 4
     la      $a0, error_msg
     syscall                                 # print error_msg on the console
+    j       exit
 
+k_lezero:
+    li      $v0, 4
+    la      $a0, k_lezero_msg
+    syscall                                 # print k_lezero_msg on the console
+    j       exit
 
 exit:
     li      $v0, 10                         
