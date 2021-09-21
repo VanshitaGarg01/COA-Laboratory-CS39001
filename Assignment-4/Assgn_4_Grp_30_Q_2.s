@@ -60,8 +60,8 @@ display:
     jal     printArray                      # call function printArray with $a0 and $a1 as arguments
 
 free_stack: 
-    move    $sp, $fp                            # before ending the program, restore the stack pointer
-    j       exit                                # unconditional jump to exit
+    move    $sp, $fp                        # before ending the program, restore the stack pointer
+    j       exit                            # unconditional jump to exit
 
 
 # Recursive procedure to sort an array
