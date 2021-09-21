@@ -59,8 +59,6 @@ display:
     li      $a1, 10                         # $a1 = size of array = 10
     jal     printArray                      # call function printArray with $a0 and $a1 as arguments
 
-    # j       exit                            # jump to exit
-
 free_stack: 
     move    $sp, $fp                            # before ending the program, restore the stack pointer
     j       exit                                # unconditional jump to exit

@@ -113,8 +113,6 @@ print_newline:
     la      $a0, newline
     syscall                                 # print a newline
 
-    # j       exit                            # jump to exit
-
 free_stack: 
     move    $sp, $fp                            # before ending the program, restore the stack pointer
     j       exit                                # unconditional jump to exit
