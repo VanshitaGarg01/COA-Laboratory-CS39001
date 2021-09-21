@@ -131,7 +131,7 @@ free_stack:
 # Function to initialise the stack and frame pointers
 initStack:
     addi    $sp, $sp, -4                        # Decrement stack pointer by 4
-    sw      $fp, 0($sp)                         # Store $fp in stack
+    sw      $fp, 4($sp)                         # Store $fp in stack
     move    $fp, $sp                            # Make $fp point to current stack top before program execution
     jr      $ra                                 # jump to return address
 
@@ -139,7 +139,7 @@ initStack:
 # Function to push an element (in $a0) to the stack
 pushToStack:
     addi    $sp, $sp, -4                        # Decrement stack pointer by 4
-    sw      $a0, 0($sp)                         # Store $a0 in stack
+    sw      $a0, 4($sp)                         # Store $a0 in stack
     jr      $ra                                 # jump to return address
 
 

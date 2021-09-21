@@ -9,7 +9,7 @@
 array_prompt:                                           # Prompt for array input
     .asciiz "Enter 10 integers (each integer on a new line):\n"
 sorted_msg:                                             # Display message for printing the sorted array
-    .asciiz "Sorted array: "
+    .asciiz "\nSorted array: "
 whitespace:                                             # Whitespace character
     .asciiz " "
 newline:                                                # Newline character
@@ -59,7 +59,11 @@ display:
     li      $a1, 10                         # $a1 = size of array = 10
     jal     printArray                      # call function printArray with $a0 and $a1 as arguments
 
-    j       exit                            # jump to exit
+    # j       exit                            # jump to exit
+
+free_stack: 
+    move    $sp, $fp                            # before ending the program, restore the stack pointer
+    j       exit                                # unconditional jump to exit
 
 
 # Recursive procedure to sort an array

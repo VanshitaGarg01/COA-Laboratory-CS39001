@@ -11,7 +11,7 @@ array_prompt:                                           # Prompt for array input
 key_propmt:                                             # Prompt for search key input
     .asciiz "Enter the integer to be searched: "
 sorted_msg:                                             # Display message for printing the sorted array
-    .asciiz "Sorted array: "
+    .asciiz "\nSorted array: "
 found_msg:                                              # Display message when key is found
     .asciiz " is FOUND in the array at index "
 not_found_msg:                                          # Display message when key is not found
@@ -113,7 +113,11 @@ print_newline:
     la      $a0, newline
     syscall                                 # print a newline
 
-    j       exit                            # jump to exit
+    # j       exit                            # jump to exit
+
+free_stack: 
+    move    $sp, $fp                            # before ending the program, restore the stack pointer
+    j       exit                                # unconditional jump to exit
 
 
 # Recursive procedure to sort an array
