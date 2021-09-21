@@ -1,3 +1,9 @@
+# Assignment No. - 4
+# Problem No. - 1 (Finding determinant of a matrix recursively)
+# Semester - 5 (Autumn 2021-22)
+# Group No. - 30
+# Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
+
 # Data Segment
     .data
 input_prompt:                                                       # Prompt for reading input
@@ -15,9 +21,6 @@ whitespace:                                                         # Whitespace
 newline:                                                            # Newline character
     .asciiz "\n"
 
-debug:
-    .asciiz "val: "
-
 # Code Segment
 
     .text
@@ -33,30 +36,30 @@ main:
     jal     initStack                           # call initStack to set up stack and frame pointer
     move    $s0, $sp                            # save stack pointer in $s0, $s0 stores address of $fp
 
-    li      $v0, 4  
-    la      $a0, input_prompt   
+    li      $v0, 4                              # Loads value 4 in $v0, 4 is the system call code for printing a string to console
+    la      $a0, input_prompt                   # Loads address of input_prompt in a0
     syscall                                     # print input_prompt on the console
 
-    li      $v0, 5  
+    li      $v0, 5                              # Loads value 5 in $v0, 5 is the system call code to read an integer from console
     syscall                                     # read n
-    move    $a0, $v0                            # $a0 = argument for pushToStack function
+    move    $a0, $v0                            # $a0 = argument for pushToStack function, $v0 stores n
     jal     pushToStack                         # push n on the stack
 
     blez    $v0, n_lezero                       # if n <= 0, it is invalid
 
-    li      $v0, 5  
+    li      $v0, 5                              # Loads value 5 in $v0, 5 is the system call code to read an integer from console
     syscall                                     # read a
-    move    $a0, $v0                            # $a0 = argument for pushToStack function
+    move    $a0, $v0                            # $a0 = argument for pushToStack function, $v0 stores a
     jal     pushToStack                         # push a on the stack
 
-    li      $v0, 5  
+    li      $v0, 5                              # Loads value 5 in $v0, 5 is the system call code to read an integer from console
     syscall                                     # read r
-    move    $a0, $v0                            # $a0 = argument for pushToStack function
+    move    $a0, $v0                            # $a0 = argument for pushToStack function, $v0 = r
     jal     pushToStack                         # push r on the stack
 
-    li      $v0, 5  
+    li      $v0, 5                              # Loads value 5 in $v0, 5 is the system call code to read an integer from console
     syscall                                     # read m
-    move    $a0, $v0                            # $a0 = argument for pushToStack function
+    move    $a0, $v0                            # $a0 = argument for pushToStack function, $v0 = m
     jal     pushToStack                         # push m on the stack
 
     beq    $v0, $zero, m_ezero                  # if m == 0, it is invalid
@@ -74,7 +77,7 @@ populate_A:
     lw      $t3, -8($s0)                        # $t3 = a
     lw      $t6, -16($s0)                       # t6 = m
     div     $t3, $t6                            # HI stores a%m and LO stores a/m
-    mfhi    $t3
+    mfhi    $t3                                 # $t3 stores a%m
     lw      $t4, -12($s0)                       # $t4 = r
     move    $t5, $s1                            # $t5 = address of first element of A
 
@@ -84,7 +87,7 @@ populate_loop:
     bge     $t2, $t1, display_A                 # if i >= n * n, exit loop and jump to display_A
     sw      $t3, 0($t5)                         # store the value in $t3 to the current matrix element being pointed to by $t6
     mul     $t3, $t3, $t4                       # $ t3 = $t3 * r (get next term of GP)
-    lw      $t6, -16($s0)
+    lw      $t6, -16($s0)                       # $t6 stores m
     div     $t3, $t6                            # HI stores $t3 % m and LO stores $t3 / m
     mfhi    $t3                                 # $t3 stores (ar^i)%m
     addi    $t5, -4                             # decrement $t5 by 4 to point to next matrix element
@@ -92,8 +95,8 @@ populate_loop:
     j populate_loop                             # continue the loop
 
 display_A:  
-    li      $v0, 4  
-    la      $a0, A_msg  
+    li      $v0, 4                              # Loads value 4 in $v0, 4 is the system call code for printing a string to console
+    la      $a0, A_msg                          # Loads address of A_msg in a0
     syscall                                     # print A_msg on the console
 
     lw      $a0, -4($s0)                        # $a0 = n
@@ -103,22 +106,20 @@ display_A:
 call_recursive_Det:
     lw    $a0, -4($s0)                          # $a0 = n
     move  $a1, $s1                              # $a1 = address of first element of matrix A
-    jal   recursive_Det
+    jal   recursive_Det                         # call the recursive_Det function with $a0, $a1 as arguments
 
-    move    $t0, $v0
-    li      $v0, 4
-    la      $a0, output_msg
-    syscall
+    move    $t0, $v0                            # $t0 = $v0, $v0 stores determinant of A.
+    li      $v0, 4                              # Loads value 4 in $v0, 4 is the system call code for printing a string to console
+    la      $a0, output_msg                     # Loads address of output_msg in a0
+    syscall                                     # print output_msg on the console
 
-    move    $a0, $t0
-    la      $v0, 1
-    syscall
+    move    $a0, $t0                            # a0 = det(A)
+    la      $v0, 1                              # Loads value 1 in $v0, 1 is the system call code for printing an integer to console
+    syscall                                     # print det(A) on the console
 
-    li      $v0, 4
-    la      $a0, newline
-    syscall
-
-    # j       exit
+    li      $v0, 4                              # Loads value 4 in $v0, 4 is the system call code for printing a string to console
+    la      $a0, newline                        # Loads address of newline in a0
+    syscall                                     # print newline on the console
 
 free_stack: 
     move    $sp, $fp                            # before ending the program, restore the stack pointer
@@ -139,17 +140,18 @@ pushToStack:
     sw      $a0, 0($sp)                         # Store $a0 in stack
     jr      $ra                                 # jump to return address
 
+
 # Function to pop an element from stack
 popFromStack:
-    addi    $sp, $sp, 4
-    jr      $ra
+    addi    $sp, $sp, 4                         # increment stack pointer by 4
+    jr      $ra                                 # jump to return address
 
 
 # Function to allocate memory for n * n integers on stack
 mallocInStack:
-    sll     $t0, $a0, 2                         # $t0 = $a0 * 4 = 4*m*n
+    sll     $t0, $a0, 2                         # $t0 = $a0 * 4 = 4*n*n
     addi    $v0, $sp, -4                        # store beginning address in $v0, so that we can return this value
-    sub     $sp, $sp, $t0                       # Decrement stack pointer to allocate memory for 4*m*n bytes
+    sub     $sp, $sp, $t0                       # Decrement stack pointer to allocate memory for 4*n*n bytes
     jr      $ra                                 # jump to return address
 
 
@@ -193,81 +195,53 @@ return_from_print:
 
 # recursive determinant function
 recursive_Det:
-    # move    $t5, $ra
-    # move    $t6, $a0
-    # move    $t7, $a1
-    # jal     printMatrix
+    move    $t0, $ra                            # $t0 = $ra
+    jal     pushToStack                         # push $a0(n) to stack
+    move    $a0, $a1                            # $a0 = $a1, $a1 stores address of first element of matrix A
+    jal     pushToStack                         # push $a0 to stack
+    move    $a0, $t0                            # $a0 = $t0, $t0 stores return address($ra)
+    jal     pushToStack                         # push $a0 to stack
+    li      $t0, 1                              # $t0 = 1
+    lw      $t1, 8($sp)                         # $t1 = n as ($sp - 8) stores address of n
+    bne     $t0, $t1, not_equal1                # check if n != 1, if n != 1 jump to not_equal1
 
-    # move    $ra, $t5
-    # move    $a0, $t6
-    # move    $a1, $t7   
-
-    # move    $t1, $a0
-
-    move    $t0, $ra
-    jal     pushToStack
-    move    $a0, $a1
-    jal     pushToStack
-    move    $a0, $t0
-    jal     pushToStack
-
-    # move    $ra, $t0
-
-    # addi    $sp, $sp, -12                       # adjust stack for 3 items
-    # sw      $ra, 0($sp)                         # save return address on stack
-    # sw      $a1, 4($sp)                         # save address of first element of matrix A on stack
-    # sw      $a0, 8($sp)                         # save n on stack
-
-    li      $t0, 1
-    lw      $t1, 8($sp)
-    # bne     $t0, $a0, not_equal1
-    bne     $t0, $t1, not_equal1
     # base case
-    lw      $v0, 0($a1)
-    lw      $ra, 0($sp)
-    addi    $sp, $sp, 12
-    jr      $ra
+    lw      $v0, 0($a1)                         # $v0 = A[0][0], $a1 stores address of first element of matrix A 
+    lw      $ra, 0($sp)                         # restore return address from stack
+    addi    $sp, $sp, 12                        # pop 3 elements from stack
+    jr      $ra                                 # jump to ra
 
 not_equal1:
    
-    li      $v0, 0                              # stores return value
-    move    $a0, $v0
-    jal     pushToStack                 
-    # sw      $v0, 4($sp)                         # stores current value on stack
-    # addi    $sp, $sp, -8
+    li      $v0, 0                              # stores determinant value, initialized to det(A) = 0
+    move    $a0, $v0                            # $a0 = $v0
+    jal     pushToStack                         # push $a0 to stack
     li      $t0, 1                              # stores sign, initialized to 1
-    move    $a0, $t0
-    jal     pushToStack
-    # sw      $t0, 0($sp)                         # sign stored on stack
-    
+    move    $a0, $t0                            # $a0 = $t0
+    jal     pushToStack                         # push $a0(currently stores sign) to stack
     lw      $t2, 16($sp)                        # $t2 stores n
     li      $t0, 0                              # $t0 stores loop_counter, initialized to 0
 
 loopDet: 
-    beq     $t0, $t2, end_loop                  # check if j == n
+    beq     $t0, $t2, end_loop                  # check if j == n, if yes exit from loop and jump to end_loop
     move    $t6, $t0                            # $t6 stores j
-    # addi    $sp, $sp, -4                        # create space for 1 variable on stack
-    # sw      $t0, 0($sp)                         # store current value of loop counter on stack
-
-    move    $a0, $t0
-    jal     pushToStack
+    move    $a0, $t0                            # $a0 = $t0, $t0 stores loop counter j
+    jal     pushToStack                         # pust $a0 (currently stores loop counter) to stack
 
     lw      $t7, 16($sp)                        # $t7 stores address of 1st element of A
     move    $t1, $t2                            # store n' in $t1
-    addi    $t1, $t1,-1                         # $t1 = n'-1
-    mul     $t1, $t1, $t1                       # $t1 = $t1 * $t1 (i.e., $t1 = (n'-1)*(n'-1))
+    addi    $t1, $t1,-1                         # $t1 = n' = n-1
+    mul     $t1, $t1, $t1                       # $t1 = $t1 * $t1 (i.e., $t1 = (n')*(n') where n' = n-1)
     # allocate memory on stack
-    move    $a0, $t1
-    jal     mallocInStack
+    move    $a0, $t1                            # $a0 = (n')*(n')
+    jal     mallocInStack                       # call mallocInStack with $a0 as argument
     # populate matrix A'(cofactor matrix)
     move    $t0, $t2                            # $t0 store n
     move    $t1, $v0                            # $t1 stores address of 1st element of A'
     li      $t2, 1                              # stores row
     li      $t3, 0                              # stores col
-    # li      $t4, 0                              # stores i
-    # li      $t5, 0                              # stores j
-    li      $t8, -4
-    mul     $t8, $t8, $t0
+    li      $t8, -4                             # $t8 = -4 
+    mul     $t8, $t8, $t0                       # $t8 = -4*n
     add     $t7, $t7, $t8                       # $t7 points to 1st element of 2nd row in matrix A
     # $t6 stores col to be skipped
 
@@ -276,111 +250,85 @@ outer_fillA:
     move    $t3, $zero                          # col = 0
 
 inner_fillA:
-    beq     $t3, $t0, end_ifillA                # check if col == n, if yes, end inner loop of fill A
-    beq     $t6, $t3, increment_col             # if col == j, jump to increment col
-    lw      $t4, 0($t7)
-    sw      $t4, 0($t1)
-    addi    $t1, $t1, -4
-    addi    $t7, $t7, -4
-    addi    $t3, $t3, 1
-    j       inner_fillA
+    beq     $t3, $t0, end_ifillA                # check if col == n, if yes, end inner loop of fill A(i.e., end_ifillA)
+    beq     $t6, $t3, increment_col             # if col == j, jump to increment col(i.e., increment_col)
+    lw      $t4, 0($t7)                         # $t4 = A[row][col]
+    sw      $t4, 0($t1)                         # A'[i][j] = A[row][col]
+    addi    $t1, $t1, -4                        # $t1 = $t1 - 4
+    addi    $t7, $t7, -4                        # $t7 = $t7 - 4
+    addi    $t3, $t3, 1                         # $t3 = $t3 + 3, increment col
+    j       inner_fillA                         # unconditional jump to inner_fillA
 
 increment_col:
-    addi    $t3, $t3, 1
-    addi    $t7, $t7, -4
-    j       inner_fillA
+    addi    $t3, $t3, 1                         # $t3 = $t3  + 1, increment col
+    addi    $t7, $t7, -4                        # $t7 = A[row][col+1]
+    j       inner_fillA                         # unconditional jump to inner_fillA
 
 end_ifillA:
-    addi    $t2, $t2, 1
-    j       outer_fillA
+    addi    $t2, $t2, 1                         # $t2 = $t2 + 1, increment row
+    j       outer_fillA                         # unconditional jump to outer_fillA
 
 end_ofillA:
     addi    $t0, $t0, -1                        # $t0 = n-1
-    move    $a0, $t0
-    jal     pushToStack
-    move    $a0, $t0                            # $a0 = n as $t0 stores n
-    # addi    $a0, $a0, -1                        # $a0 = n-1
+    move    $a0, $t0                            # $a0 = $t0, $a0 stores n-1
+    jal     pushToStack                         # push $a0 to stack
+    move    $a0, $t0                            # $a0 = n-1 as $t0 stores n-1
     move    $a1, $v0                            # $a1 stores address of 1st element of cofactor matrix A'
-    # addi    $sp, $sp, -4                        # create space for 1 variable on stack
-    
-    # sw      $t0, 0($sp)                         # store n-1 on stack
-    
-    jal     recursive_Det
-
-    # move    $t9, $v0 
-
-    # li      $v0, 4  
-    # la      $a0, debug    
-    # syscall   
-
-    # li      $v0, 1
-    # move    $a0, $t9
-    # syscall
-
-    # li      $v0, 4  
-    # la      $a0, newline    
-    # syscall   
-
-    # move    $v0, $t9
+    jal     recursive_Det                       # call the recursive_Det function with $a0, $a1 as arguments
 
     lw      $t2, 0($sp)                         # $t2 stores n-1
-    move    $t0, $t2
+    move    $t0, $t2                            # $t0 = n-1
     mul     $t0, $t0, $t0                       # $t0 stores (n-1)*(n-1)
-    addi    $sp, $sp, 4                         # pop top element (i.e., n-1) from stack
-    sll     $t0, $t0, 2
+    jal     popFromStack                        # pop top element (i.e., n-1) from stack
+    sll     $t0, $t0, 2                         # $t0 = 4*(n-1)*(n-1)
     add     $sp, $sp, $t0                       # pop matrix A' from stack
     lw      $t0, 0($sp)                         # load loop counter back in $t0
-    addi    $sp, $sp, 4                         # pop loop counter from stack
+    jal     popFromStack                        # pop loop counter from stack
     lw      $t1, 0($sp)                         # load sign from stack
-    addi    $sp, $sp, 4                         # pop sign from stack
+    jal     popFromStack                        # pop sign from stack
+
     lw      $t3, 0($sp)                         # load current value of det from loop
-    addi    $sp, $sp, 4                         # pop current value of det from stack
-    # move    $t4, $zero                        # $t4 = 0, $t4 will store so far computed value of determinant
-    # lw      $t9, 0($sp)
+    jal     popFromStack                        # pop current value of det from stack
     mul     $t4, $v0, $t1                       # $t4 = recursiveDet(A', n-1)*sign
     lw      $t5, 4($sp)                         # load address of 1st element of A in $t5
     move    $t6, $t0                            # $t6 = j(loop counter)
-    li      $t8, -4
+    li      $t8, -4                             # $t8 = -4
     mul     $t6, $t6, $t8                       # $t6 = -4*j
     add     $t5, $t5, $t6                       # $t5 now stores address of jth element of 1st row
     lw      $t5, 0($t5)                         # $t5 stores jth element of 1st row
     mul     $t4, $t4, $t5                       # $t4 = recursiveDet(A', n-1) * sign * A[0][j]
-    add     $t4, $t4, $t3
-    # addi    $sp, $sp, -8                        # create space for 2 variables on stack
-    # sw      $t4, 4($sp)                         # store sofar value of Det on stack
-
-    move    $a0, $t4
-    jal     pushToStack
+    add     $t4, $t4, $t3                       # $t4 = $t4 + $t3, equivalent to so_far_Det(A) += $t4
+    move    $a0, $t4                            # $a0 = so_far_Det(A)
+    jal     pushToStack                         # push $a0(so_far_Det(A)) to stack
     
-    li      $t8, -1
+    li      $t8, -1                             # $t8 = -1
     mul     $t1, $t1, $t8                       # sign = -sign
-    # sw      $t1, 0($sp)                         # store updated sign on stack
-    move    $a0, $t1
-    jal     pushToStack
+    move    $a0, $t1                            # $a0 = -sign
+    jal     pushToStack                         # push $a0(sign) to stack
     
     addi    $t2, $t2, 1                         # $t2 = n
     addi    $t0, $t0, 1                         # $t0 = j+1
-    j       loopDet
+    j       loopDet                             # unconditional jump to loopDet
 
 end_loop:
-    addi    $sp, $sp, 4                         # pop sign from stack
-    lw      $v0, 0($sp)
-    addi    $sp, $sp, 4                         # pop determinant value from stack
+    jal     popFromStack                        # pop sign from stack
+    lw      $v0, 0($sp)                         # $v0 = Det(A)
+    jal     popFromStack                        # pop determinant value from stack
     lw      $ra, 0($sp)                         # restore return address
-    addi    $sp, $sp, 12
-    jr      $ra
+    addi    $sp, $sp, 12                        # pop 3 elements from stack
+    jr      $ra                                 # jump to return address
 
 m_ezero:
-    li      $v0, 4
-    la      $a0, m_lezero_msg
+    li      $v0, 4                              # Loads value 4 in $v0, 4 is the system call code for printing a string to console
+    la      $a0, m_lezero_msg                   # Loads address of m_lezero_msg in a0
     syscall                                     # print m_ezero_msg on the console
-    j       exit
+    j       exit                                # unconditional jump to exit
 
 n_lezero:
-    li      $v0, 4
-    la      $a0, n_lezero_msg
+    li      $v0, 4                              # Loads value 4 in $v0, 4 is the system call code for printing a string to console
+    la      $a0, n_lezero_msg                   # Loads address of n_lezero_msg in a0
     syscall                                     # print n_lezero_msg on the console
-    j       exit
+    j       exit                                # unconditional jump to exit
 
 exit:
     li      $v0, 10                         

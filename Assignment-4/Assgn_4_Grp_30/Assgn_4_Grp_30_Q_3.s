@@ -4,6 +4,8 @@
 # Group No. - 30
 # Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 
+# In this problem, 0-indexing for the array has been assumed while displaying the index
+
 # Data Segment
     .data
 array_prompt:                                           # Prompt for array input
