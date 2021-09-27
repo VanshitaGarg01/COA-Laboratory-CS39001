@@ -44,9 +44,7 @@ module detector_multiple_3_tb;
     detector_multiple_3 DM1 (.x(x), .rst(rst), .clk(clk), .out(out));
     
     initial begin
-        clk = 1'b0;
-        rst = 1'b1; 
-        x = 1'b0;
+        clk = 1'b0; rst = 1'b1; x = 1'b0;
 
         #2 rst = 1'b0; 
         

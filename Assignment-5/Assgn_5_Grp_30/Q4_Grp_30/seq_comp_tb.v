@@ -44,7 +44,7 @@ module seq_comp_tb;
     initial begin
         // Check for a case when A > B
         clk = 1'b0; rst = 1'b1; op = 1'b0;
-        #2 rst = 1'b0; load_A = 1'b1; load_B = 1'b1; parallel_in_A = 32'd456; parallel_in_B = 32'd123;
+        #2 rst = 1'b0; load_A = 1'b1; load_B = 1'b1; parallel_in_A = 32'd3424522475; parallel_in_B = 32'd232242467;
         #2 load_A = 1'b0; load_B = 1'b0;
         
         // Wait for 32 clock cycles
@@ -53,7 +53,7 @@ module seq_comp_tb;
         
         // Check for a case when A = B
         #1 rst = 1'b1; op = 1'b0;
-        #1 rst = 1'b0; load_A = 1'b1; load_B = 1'b1; parallel_in_A = 32'd123; parallel_in_B = 32'd123;
+        #1 rst = 1'b0; load_A = 1'b1; load_B = 1'b1; parallel_in_A = 32'd3424522475; parallel_in_B = 32'd3424522475;
         #2 load_A = 1'b0; load_B = 1'b0;
         
         // Wait for 32 clock cycles
@@ -62,7 +62,7 @@ module seq_comp_tb;
         
         // Check for a case when A < B
         #1 rst = 1'b1; op = 1'b0;
-        #1 rst = 1'b0; load_A = 1'b1; load_B = 1'b1; parallel_in_A = 32'd12; parallel_in_B = 32'd123;
+        #1 rst = 1'b0; load_A = 1'b1; load_B = 1'b1; parallel_in_A = 32'd232242467; parallel_in_B = 32'd3424522475;
         #2 load_A = 1'b0; load_B = 1'b0;
         
         // Wait for 32 clock cycles

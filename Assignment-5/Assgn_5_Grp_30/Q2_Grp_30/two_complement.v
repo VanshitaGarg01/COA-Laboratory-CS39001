@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    01:01:23 09/28/2021 
+// Create Date:    00:47:36 09/28/2021 
 // Design Name: 
-// Module Name:    detector_multiple_3 
+// Module Name:    two_complement 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -21,50 +21,50 @@
 
 /*
    Assignment No. - 5
-   Problem No. - 3
+   Problem No. - 2
    Semester - 5 (Autumn 2021-22)
    Group No. - 30
    Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 */
 
-// Module for multiple-of-3 detector FSM using a Mealy machine
-module detector_multiple_3 (x, rst, clk, out);
+// Module for two's complement FSM using a Mealy machine
+// We have 2 states - S0 and S1, we stay in S0 as long as the first 1 from LSB is not read, and output each bit as it is
+// After reading the first 1 from the LSB, we go to state S1, and output the complement of each bit
+module two_complement (x, rst, clk, out);
     /*
       Input and output ports :
       x - the current input bit
-      rst - the reset signal
       clk - the clock signal
+      rst - the reset signal
       out - the output bit corresponding to the bit x
     */
     input x, rst, clk;
     output reg out;
     
-    reg [1:0] PS, NS;
-    parameter S0 = 2'b00, S1 = 2'b01, S2 = 2'b10;
+    reg PS, NS;
+    parameter S0 = 1'b0, S1 = 1'b1;
     
-    // Set the next state
-    always @ (posedge clk or posedge rst) begin
+    // Set present state
+    always @(posedge clk or posedge rst) begin
         if (rst)
-            PS <= 2'b00;
+            PS <= 1'b0;
         else 
             PS <= NS;
     end
     
     // Next state logic
-    always @ (*) begin
+    always @(*) begin
         case (PS)
             S0: NS = (x) ? S1 : S0;
-            S1: NS = (x) ? S0 : S2;
-            S2: NS = (x) ? S2 : S1;
+            S1: NS = S1;
         endcase
     end
     
     // Output logic
-    always @ (*) begin
+    always @(*) begin
         case (PS)
-            S0: out = (x) ? 1'b0 : 1'b1;
-            S1: out = (x) ? 1'b1 : 1'b0;
-            S2: out = 1'b0;
+            S0: out = (x) ? 1'b1 : 1'b0;
+            S1: out = (x) ? 1'b0 : 1'b1;
         endcase
     end
 endmodule

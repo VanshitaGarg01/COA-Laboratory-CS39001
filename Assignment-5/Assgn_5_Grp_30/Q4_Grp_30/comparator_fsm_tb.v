@@ -43,19 +43,22 @@ module comparator_fsm_tb;
         // Check for a case when A = B
         clk = 1'b0; rst = 1'b1; op = 1'b0;
         #4 rst = 1'b0; a = 1'b1; b = 1'b1;
-        #10 op = 1'b1; a = 1'b0; b = 1'b0;
+        #8 a = 1'b0; b = 1'b0;
+        #2 op = 1'b1;
         #2 $display("time = %0d, L = %b, E = %b, G = %b", $time, L, E, G);
         
         // Check for a case when A > B
         #4 rst = 1'b1; op = 1'b0;
         #4 rst = 1'b0; a = 1'b1; b = 1'b0;
-        #10 op = 1'b1; a = 1'b0; b = 1'b1;
+        #8 a = 1'b0; b = 1'b1;
+        #2 op = 1'b1;
         #2 $display("time = %0d, L = %b, E = %b, G = %b", $time, L, E, G);
         
         // Check for a case when A < B
         #4 rst = 1'b1; op = 1'b0;
         #4 rst = 1'b0; a = 1'b0; b = 1'b1;
-        #10 op = 1'b1; a = 1'b1; b = 1'b0;
+        #8 a = 1'b1; b = 1'b0;
+        #2 op = 1'b1;
         #2 $display("time = %0d, L = %b, E = %b, G = %b", $time, L, E, G);
 
         #1 $finish;

@@ -28,6 +28,10 @@
 */
 
 // Module for a FSM which acts as an unsigned comparator
+// We have 3 states - A_eq_B (A = B till now), A_gr_B (A > B till now) and A_le_B (A < B till now)
+// Once we enter the states A_gr_B or A_le_B, we stay in that state
+// From A_eq_B, on reading a = 1, b = 1 or a = 0, b = 0, we self loop
+// On reading a = 1, b = 0, we go to A_gr_B, on reading a = 0, b = 1, we go to A_le_B
 module comparator_fsm (clk, op, rst, a, b, L, E, G);
     /*
       Input and output ports :

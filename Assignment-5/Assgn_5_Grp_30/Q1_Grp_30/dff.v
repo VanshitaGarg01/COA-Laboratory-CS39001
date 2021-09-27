@@ -34,7 +34,7 @@ module dff (clk, rst, d, q);
       clk - the clock signal
       rst - the reset signal
       d - input value
-      q - value stored by the latch (output)
+      q - value stored by the flip-flop (output)
     */
     input clk, rst, d;
     output reg q;
