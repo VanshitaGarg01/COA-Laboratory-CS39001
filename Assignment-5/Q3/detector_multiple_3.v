@@ -6,7 +6,7 @@ module detector_multiple_3 (out, x, rst, clk);
 
     always @ (posedge clk or posedge rst) begin
         if (rst)
-            PS <= S0;
+            PS <= 2'b00;
         else 
             PS <= NS;
         

@@ -11,4 +11,3 @@ module mux (a0, a1, sel, out);
     end
 
 endmodule
-

@@ -6,16 +6,16 @@ module two_complement (out, x, rst, clk);
 
     always @ (posedge clk or posedge rst) begin
         if (rst)
-            PS <= S0;
+            PS <= 1'b0;
         else 
             PS <= NS;
     end
 
     always @ (*) begin
-        if (!PS & !x)
-            NS = S0;
-        else 
-            NS = S1;
+        case (PS)
+            S0: NS = (x) ? S1 : S0;
+            S1: NS = S1;
+        endcase
     end
 
     always @ (*) begin

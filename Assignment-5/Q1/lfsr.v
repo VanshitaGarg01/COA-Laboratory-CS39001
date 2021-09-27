@@ -1,7 +1,7 @@
 module lfsr (seed, sel, clk, rst, w);
     input [3:0] seed;
     input sel, clk, rst;
-    output [3:0] w;
+    output wire [3:0] w;
     wire [3:0] wint;
     wire xor_output;
     
