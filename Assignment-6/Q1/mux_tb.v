@@ -21,7 +21,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /*
-   Assignment No. - 5
+   Assignment No. - 6
    Problem No. - 1
    Semester - 5 (Autumn 2021-22)
    Group No. - 30

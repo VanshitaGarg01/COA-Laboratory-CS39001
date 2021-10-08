@@ -21,14 +21,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 
 /*
-   Assignment No. - 5
+   Assignment No. - 6
    Problem No. - 1
    Semester - 5 (Autumn 2021-22)
    Group No. - 30
    Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 */
 
-// Testbench for 2x1 mux module
+// Testbench for mux_array module
 module mux_array_tb;
     // Inputs
     reg [7:0] a0, a1;
