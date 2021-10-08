@@ -6,6 +6,8 @@
    Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 */
 
+`timescale 1ns / 1ps
+
 // Testbench for the shift register module
 module shift_register_tb;
     // Inputs

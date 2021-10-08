@@ -6,6 +6,9 @@
    Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 */
 
+`timescale 1ns / 1ps
+
+// Testbench for bit serial adder
 module bit_serial_adder_tb;
     // Inputs
     reg clk, rst, load;
@@ -29,7 +32,7 @@ module bit_serial_adder_tb;
         #5 load = 1'b0;
 
         // Wait for clock cycles to finish
-        #90 $display("time = %0d, A = %b, B = %b, sum = %b, c_out = %b", $time, A, B, sum, c_out);
+        #90 $display("time = %0d, A = %b (= %d), B = %b (= %d), sum = %b (= %d), c_out = %b", $time, A, A, B, B, sum, sum, c_out);
 
         #10 rst = 1'b1;
         #10 rst = 1'b0;
@@ -40,7 +43,7 @@ module bit_serial_adder_tb;
         #5 load = 1'b0;
         
         // Wait for clock cycles to finish
-        #90 $display("time = %0d, A = %b, B = %b, sum = %b, c_out = %b", $time, A, B, sum, c_out);
+        #90 $display("time = %0d, A = %b (= %d), B = %b (= %d), sum = %b (= %d), c_out = %b", $time, A, A, B, B, sum, sum, c_out);
         
         #10 $finish;
     end

@@ -6,6 +6,8 @@
    Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 */
 
+`timescale 1ns / 1ps
+
 // Testbench for D Flip-Flop module
 module dff_tb;
     // Inputs
@@ -21,7 +23,7 @@ module dff_tb;
         // Monitor the changes
         $monitor("time = %0d, d = %b, q = %b, rst = %b, clk = %b", $time, d, q, rst, clk);
         
-        // Stimulus to verify the working of the multiplexer
+        // Stimulus to verify the working of the DFF
         clk = 1'b0;
         #2 d = 1'b1; rst = 1'b1;
         #1 rst = 1'b0;

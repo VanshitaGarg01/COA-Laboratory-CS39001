@@ -6,6 +6,8 @@
    Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 */
 
+`timescale 1ns / 1ps
+
 // Testbench for the serial-in parallel-out shift register module
 module sipo_tb;
     // Inputs

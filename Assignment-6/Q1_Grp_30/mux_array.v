@@ -6,6 +6,8 @@
    Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 */
 
+`timescale 1ns / 1ps
+
 // mux_array module
 module mux_array (input [7:0] a0, input [7:0] a1, input sel, output [7:0] out);
     /*

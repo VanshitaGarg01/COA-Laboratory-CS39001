@@ -6,6 +6,8 @@
    Group Members - Ashutosh Kumar Singh (19CS30008) & Vanshita Garg (19CS10064)
 */
 
+`timescale 1ns / 1ps
+
 // Full Adder module
 module full_adder(a, b, c_in, sum, c_out);
     /*

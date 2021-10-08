@@ -6,6 +6,8 @@
    Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 */
 
+`timescale 1ns / 1ps
+
 // Module for Sequential Signed Binary Multiplier (Booth Multiplier)
 module booth_multiplier #(parameter N = 8) (clk, rst, load, A, B, prod);
      /*
@@ -31,7 +33,7 @@ module booth_multiplier #(parameter N = 8) (clk, rst, load, A, B, prod);
     reg signed [2*N-1:0] pos_B, neg_B, prod_sofar;
 
     // a and b stores A and B respectively, used for parallel load of input
-    reg signed  [N-1:0] a, b;
+    reg signed [N-1:0] a, b;
 
     // loop counter for booth multiplication algorithm, will count till 8
     integer counter = 0;

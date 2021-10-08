@@ -6,6 +6,8 @@
    Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 */
 
+`timescale 1ns / 1ps
+
 // Top level module for the bit serial adder
 module bit_serial_adder #(parameter N = 8) (clk, rst, load, A, B, sum, c_out);
     /*

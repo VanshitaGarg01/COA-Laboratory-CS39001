@@ -6,6 +6,8 @@
    Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 */
 
+`timescale 1ns / 1ps
+
 // Testbench for the Bidirectional Barrel Shifter module
 module barrel_shifter_tb;
     // Inputs 

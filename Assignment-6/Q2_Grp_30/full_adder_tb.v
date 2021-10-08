@@ -6,6 +6,8 @@
    Group Members - Ashutosh Kumar Singh (19CS30008) & Vanshita Garg (19CS10064)
 */
 
+`timescale 1ns / 1ps
+
 // Testbench for full adder module
 module full_adder_tb;
 

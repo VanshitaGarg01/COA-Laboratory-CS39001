@@ -1,25 +1,3 @@
-`timescale 1ns / 1ps
-
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   22:54:35 09/27/2021
-// Module Name:   mux_tb
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: mux
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
-
 /*
    Assignment No. - 6
    Problem No. - 1
@@ -27,6 +5,8 @@
    Group No. - 30
    Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 */
+
+`timescale 1ns / 1ps
 
 // Testbench for 2x1 mux module
 module mux_tb;

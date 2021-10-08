@@ -6,6 +6,8 @@
    Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 */
 
+`timescale 1ns / 1ps
+
 // Module for a serial-in parallel out shift register for the output of the bit-serial adder
 module sipo #(parameter N = 8) (clk, rst, serial_in, new_load, out);
     /*

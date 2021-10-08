@@ -6,6 +6,8 @@
    Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
 */
 
+`timescale 1ns / 1ps
+
 // Module for a 8-bit shift register with synchronous reset and parallel load
 module shift_register #(parameter N = 8) (clk, rst, load, parallel_in, out);
     /*
