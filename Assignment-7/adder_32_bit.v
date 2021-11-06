@@ -1,10 +1,10 @@
 // 32-bit ripple carry adder module
 module adder_32_bit (
     input [31:0] a,
-    input [31:0] b;
-    input c_in;
-    output [31:0] sum;
-    output c_out;
+    input [31:0] b,
+    input c_in,
+    output [31:0] sum,
+    output c_out
 );
     /*
       Input and output ports :
