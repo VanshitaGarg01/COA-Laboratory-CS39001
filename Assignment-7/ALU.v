@@ -12,20 +12,23 @@ module ALU (
     wire carryTemp;
     wire [31:0] not1Out, adder1Out, barrelShifter1Out, and1Out, xor1Out, mux1Out, mux2Out;
 
-    not not1 (not1Out, b);
+    // not not1 (not1Out, b);
 
-    mux_32b_2_1 mux1 (.a0(a), .a1(1'b1), .sel(ALUsel), .out(mux1Out));
+    mux_32b_2_1 mux1 (.a0(a), .a1(32'd1), .sel(ALUsel), .out(mux1Out));
     mux_32b_2_1 mux2 (.a0(b), .a1(not1Out), .sel(ALUsel), .out(mux2Out));
 
     adder_32_bit adder1 (.a(a), .b(b), .c_in(1'b0), .c_out(carryTemp), .sum(adder1Out));
 
     barrel_shifter barrelShifter1 (.in(mux1Out), .shamt(mux2Out), .dir(ALUop[1]), .out(barrelShifter1Out), .aorl(ALUop[0]));
 
-    and and1 (and1Out, mux1Out, mux2Out);
+    // and and1 (and1Out, mux1Out, mux2Out);
 
-    xor xor1 (xor1Out, mux1Out, mux2Out);
-
+    // xor xor1 (xor1Out, mux1Out, mux2Out);
+    assign not1Out = ~b;
+    assign and1Out = mux1Out & mux2Out;
+    assign xor1Out = mux1Out ^ mux2Out;
     always @(*) begin
+        $display($time, ", a = %d, b = %d", mux1Out, mux2Out);
         if (ALUop == 5'b00000) begin
             result = mux1Out;
         end else if (ALUop == 5'b00001) begin
@@ -35,9 +38,9 @@ module ALU (
             result = adder1Out;
         end else if (ALUop == 5'b10101) begin
             result = adder1Out;
-        end else if (ALOop == 5'b00010) begin
+        end else if (ALUop == 5'b00010) begin
             result = and1Out;
-        end else if (ALOop == 5'b00011) begin
+        end else if (ALUop == 5'b00011) begin
             result = xor1Out;
         end else if (ALUop[4:2] == 3'b010) begin
             result = barrelShifter1Out;

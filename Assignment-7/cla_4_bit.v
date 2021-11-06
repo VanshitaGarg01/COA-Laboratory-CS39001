@@ -1,5 +1,5 @@
 // 4-bit carry look-ahead adder module which computes block propagate and generate for the next level of hierarchy
-module cla_4_bit_augmented(a, b, c_in, sum, c_out, P, G);
+module cla_4_bit(a, b, c_in, sum, c_out, P, G);
     /*
       Input and output ports :
       a - first 4-bit input
