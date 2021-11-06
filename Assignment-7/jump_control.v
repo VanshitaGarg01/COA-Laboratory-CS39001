@@ -1,54 +1,53 @@
 module jump_control (
-    input Sign,
-    input Carry,
-    input Zero,
     input [5:0] opcode,
-    output reg ValidJump
+    input sign,
+    input carry,
+    input zero,
+    output reg validJump
 );
-    parameter S0 = 7, S1 = 8, S2 = 9, S3 = 10, S4 = 11, S5 = 12, S6 = 13, S7 = 14;
     
     always @(*) begin
         case (opcode)
-            S0 : begin
-                if (Sign and !Zero)
-                    ValidJump = 1;
+            6'b000111 : begin           // bltz
+                if (sign && !zero)
+                    validJump = 1;
                 else 
-                    ValidJump = 0
+                    validJump = 0;
             end
-            S1 : begin
-                if (!Sign and Zero)
-                    ValidJump = 1;
+            6'b001000 : begin           // bz
+                if (!sign && zero)
+                    validJump = 1;
                 else 
-                    ValidJump = 0
+                    validJump = 0;
             end
-            S2 : begin
-                if (!Zero)
-                    ValidJump = 1;
+            6'b001001 : begin           // bnz
+                if (!zero)
+                    validJump = 1;
                 else 
-                    ValidJump = 0
+                    validJump = 0;
             end
-            S3 : begin
-                    ValidJump = 1;
+            6'b001010 : begin           // br
+                    validJump = 1;
                 end
-            S4 : begin
-                    ValidJump = 1;
+            6'b001011 : begin           // b
+                    validJump = 1;
                 end
-            S5 : begin
-                    ValidJump = 1;
+            6'b001100 : begin           // bl
+                    validJump = 1;
                 end
-            S6 : begin
-                if (Carry)
-                    ValidJump = 1;
+            6'b001101 : begin           // bcy
+                if (carry)
+                    validJump = 1;
                 else 
-                    ValidJump = 0
+                    validJump = 0;
             end
-            S7 : begin
-                if (!Carry)
-                    ValidJump = 1;
+            6'b001110 : begin           // bncy
+                if (!carry)
+                    validJump = 1;
                 else 
-                    ValidJump = 0
+                    validJump = 0;
             end
-            default : ValidJump = 0;
+            default : validJump = 0;
         endcase
     end
 
