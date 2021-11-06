@@ -26,11 +26,11 @@ module ALU_tb;
     
     initial begin
         // Monitor the changes
-        $monitor("time = %0d, a = %d, b = %d, ALUsel = %b, ALUop = %b, carry = %b, zero = %b, sign = %b, result = %d", $time, a, b, ALUsel, ALUop, carry, zero, sign, result);
+        $monitor("time = %0d, a = %d, b = %d, ALUsel = %b, ALUop = %b, carry = %b, zero = %b, sign = %b, result = %b", $time, a, b, ALUsel, ALUop, carry, zero, sign, result);
         
         // Stimulus to verify the working of the multiplexer
-        a = 32'd75;
-        b = 32'b11111111111111000001111111111111;
+        b = 32'b00000000000000000000000000000111;
+        a = 32'b11111111111111000001111111111111;
         ALUsel = 1'b0;
         ALUop = 5'b00000;
         #5 ALUop = 5'b00001;

@@ -1,35 +1,33 @@
 module register_file (
-//     input [4:0] reg1,
-//     input [4:0] reg2,
-//     input RegWrite,
-//     input write_reg,
-//     input [31:0] write_data,
-//     input clk,
-//     input rst,
-//     output reg [31:0] read_data_1,
-//     output reg [31:0] read_data_2
-// );
+    input [4:0] rs,
+    input [4:0] rt,
+    input regWrite,
+    input [4:0] writeReg,
+    input [31:0] writeData,
+    input clk,
+    input rst,
+    output reg [31:0] readData1,
+    output reg [31:0] readData2
+);
 
-//     reg [31:0] reg_array[31:0];
-//     // wire write_reg;
-//     integer i;
+    reg [31:0] registerBank [31:0];
+    integer i;
 
-//     parameter ra = 31;
+    always @(posedge clk or posedge rst) begin
+        if (rst) begin
+            for (i = 0; i < 32; i++)
+                registerBank[i] <= 32'b00000000000000000000000000000000;
+        end else if (regWrite) begin
+            registerBank[writeReg] <= writeData;
+        end else begin
+            for (i = 0; i < 32; i++)
+                registerBank[i] <= 32'b00000000000000000000000000000000;
+        end
+    end
 
-//     // mux_4_1 MUX1 (.a0(reg1), .a1(reg2), .a2(ra), .a3(1'b0), .sel(RegDst), .out(write_reg));
-
-//     always @(posedge clk or posedge rst) begin
-//         if (rst) begin
-//             for (i = 0; i < 32; i++)
-//                 reg_array[i] <= 0;
-//         end else if (RegWrite) begin
-//             reg_array[write_reg] <= write_data;
-//         end
-//     end
-
-//     always @(*) begin
-//         read_data_1 = reg_array[reg1];
-//         read_data_2 = reg_array[reg2];
-//     end
+    always @(*) begin
+        readData1 = registerBank[rs];
+        readData2 = registerBank[rt];
+    end
 
 endmodule
