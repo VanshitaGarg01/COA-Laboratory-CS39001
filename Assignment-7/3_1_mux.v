@@ -9,7 +9,7 @@
 `timescale 1ns / 1ps
 
 // 2x1 mux module
-module mux_4_1 (input a0, input a1, input a2, input a3, input sel, output out);
+module mux_3_1 (input a0, input a1, input a2, input sel, output out);
     /*
       Input and output ports :
       a0 - first input (selected when sel = 0)
@@ -17,14 +17,13 @@ module mux_4_1 (input a0, input a1, input a2, input a3, input sel, output out);
       sel - the select line
       out - the output depending on the select line
     */ 
-    parameter S0 = 0, S1 = 1, S2 = 2, S3 = 3;
+    parameter S0 = 0, S1 = 1, S2 = 2;
 
     always @(*) begin
         case (sel)
-            S0 : output = a0;
-            S1 : output = a1;
-            S2 : output = a2;
-            S3 : output = a3;
+            S0 : out = a0;
+            S1 : out = a1;
+            S2 : out = a2;
         endcase
     end
     

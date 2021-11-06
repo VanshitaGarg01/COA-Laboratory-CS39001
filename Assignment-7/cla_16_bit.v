@@ -38,7 +38,8 @@ module cla_16_bit(a, b, c_in, sum, c_out, P, G);
       c_out - the output bit to store the carry-out
       P - block propagate for the next level of hierarchy
       G - block generate for the next level of hierarchy
-    */ 
+    */
+    parameter k = 1'b1;
     input [15:0] a, b;
     input c_in;
     output [15:0] sum;
