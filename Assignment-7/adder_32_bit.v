@@ -1,34 +1,11 @@
-`timescale 1ns / 1ps
-
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    20:33:52 08/25/2021 
-// Design Name: 
-// Module Name:    rca_32_bit 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-//
-//////////////////////////////////////////////////////////////////////////////////
-
-/*
-   Assignment No. - 1
-   Problem No. - 1
-   Semester - 5 (Autumn 2021-22)
-   Group No. - 30
-   Group Members - Ashutosh Kumar Singh (19CS30008) & Vanshita Garg (19CS10064)
-*/
-
 // 32-bit ripple carry adder module
-module adder(a, b, c_in, sum, c_out);
+module adder_32_bit (
+    input [31:0] a,
+    input [31:0] b;
+    input c_in;
+    output [31:0] sum;
+    output c_out;
+);
     /*
       Input and output ports :
       a - first 32-bit input
@@ -37,10 +14,7 @@ module adder(a, b, c_in, sum, c_out);
       sum - the 32-bit output to store the sum
       c_out - the output bit to store the carry-out
     */ 
-    input [31:0] a, b;
-    input c_in;
-    output [31:0] sum;
-    output c_out;
+
     wire c_out1, P1, P2, G1, G2;
 
     // Cascade 2 16-bit ripple carry adders to create a 32-bit ripple carry adder

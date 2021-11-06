@@ -1,34 +1,3 @@
-`timescale 1ns / 1ps
-
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   22:27:58 08/25/2021
-// Design Name:   
-// Module Name:   cla_4_bit_augmented_tb
-// Project Name:  Carry-Lookahead-Adder
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: cla_4_bit_augmented
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// 
-////////////////////////////////////////////////////////////////////////////////
-
-/*
-   Assignment No. - 1
-   Problem No. - 2
-   Semester - 5 (Autumn 2021-22)
-   Group No. - 30
-   Group Members - Ashutosh Kumar Singh (19CS30008) & Vanshita Garg (19CS10064)
-*/
-
 // Testbench for 4-bit carry look-ahead adder module with augmentation to compute next level block generate and propagate
 module cla_4_bit_augmented_tb;
 
@@ -41,7 +10,7 @@ module cla_4_bit_augmented_tb;
     wire c_out, P, G;
 
     // Instantiate the unit under test
-    cla_4_bit_augmented CLA(.a(A), .b(B), .c_in(c_in), .sum(sum), .c_out(c_out), .P(P), .G(G));
+    cla_4_bit CLA(.a(A), .b(B), .c_in(c_in), .sum(sum), .c_out(c_out), .P(P), .G(G));
 
     initial begin
         // Monitor the changes

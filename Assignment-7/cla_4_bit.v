@@ -1,32 +1,3 @@
-`timescale 1ns / 1ps
-
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    22:27:26 08/25/2021 
-// Design Name: 
-// Module Name:    cla_4_bit_augmented
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-//
-//////////////////////////////////////////////////////////////////////////////////
-
-/*
-   Assignment No. - 1
-   Problem No. - 2
-   Semester - 5 (Autumn 2021-22)
-   Group No. - 30
-   Group Members - Ashutosh Kumar Singh (19CS30008) & Vanshita Garg (19CS10064)
-*/
-
 // 4-bit carry look-ahead adder module which computes block propagate and generate for the next level of hierarchy
 module cla_4_bit_augmented(a, b, c_in, sum, c_out, P, G);
     /*

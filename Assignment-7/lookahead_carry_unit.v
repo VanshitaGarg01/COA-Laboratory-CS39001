@@ -1,32 +1,3 @@
-`timescale 1ns / 1ps
-
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    22:28:41 08/25/2021 
-// Design Name: 
-// Module Name:    lookahead_carry_unit 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-//
-//////////////////////////////////////////////////////////////////////////////////
-
-/*
-   Assignment No. - 1
-   Problem No. - 2
-   Semester - 5 (Autumn 2021-22)
-   Group No. - 30
-   Group Members - Ashutosh Kumar Singh (19CS30008) & Vanshita Garg (19CS10064)
-*/
-
 // Look-ahead carry unit module
 module lookahead_carry_unit(p, g, c_in, c, c_out, P, G);
     /*

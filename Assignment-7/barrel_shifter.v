@@ -1,13 +1,3 @@
-/*
-   Assignment No. - 6
-   Problem No. - 1
-   Semester - 5 (Autumn 2021-22)
-   Group No. - 30
-   Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
-*/
-
-`timescale 1ns / 1ps
-
 // The Bidirectional Barrel Shifter module
 module barrel_shifter (input [7:0] in, input [2:0] shamt, input dir, output [7:0] out, input aorl);
     /*

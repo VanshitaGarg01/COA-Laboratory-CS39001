@@ -13,9 +13,6 @@ module control_unit (
     output reg jumpAddr,
     output reg lblSel
 );
-
-    // parameter O0 = 6'b000000, O1 = 6'b000001, O2 = 6'b000010, O3 = 6'b000011, O4 = 6'b000100;
-    // parameter O5 = ;
     
     always @(opcode or func) begin
         case (opcode)

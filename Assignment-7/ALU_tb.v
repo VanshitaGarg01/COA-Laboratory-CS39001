@@ -1,23 +1,19 @@
-/*
-   Assignment No. - 6
-   Problem No. - 1
-   Semester - 5 (Autumn 2021-22)
-   Group No. - 30
-   Group Members - Vanshita Garg (19CS10064) & Ashutosh Kumar Singh (19CS30008)
-*/
-
-`timescale 1ns / 1ps
-
-// Testbench for 2x1 mux module
-module mux_tb;
+module ALU_tb;
+    
     // Inputs
-    reg a0, a1, sel;
-    
+    input reg [31:0] a;
+    input reg [31:0] b; 
+    input reg ALUsel;
+    input reg [4:0] ALUop; 
+
     // Outputs
-    wire out;
-    
+    output carry;
+    output zero;
+    output sign; 
+    output [31:0] result;
+
     // Instantiate the unit under test
-    mux_2_1 M1(.a0(a0), .a1(a1), .sel(sel), .out(out));
+    ALU ALU1 (.a(a), .b(b), .ALUsel(ALUsel), .ALUop(ALUop), .carry(carry), .zero(zero), .sign(sign), .result(result));
     
     initial begin
         // Monitor the changes
