@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/barrel_shifter.xst" -ofn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/barrel_shifter.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-1 barrel_shifter.ngc barrel_shifter.ngd  
+map -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o barrel_shifter_map.ncd barrel_shifter.ngd barrel_shifter.pcf 
+par -w -intstyle ise -ol high -mt off barrel_shifter_map.ncd barrel_shifter.ncd barrel_shifter.pcf 
+trce -intstyle ise -v 3 -s 1 -n 3 -fastpaths -xml barrel_shifter.twx barrel_shifter.ncd -o barrel_shifter.twr barrel_shifter.pcf 
+xst -intstyle ise -ifn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/barrel_shifter.xst" -ofn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/barrel_shifter.syr" 

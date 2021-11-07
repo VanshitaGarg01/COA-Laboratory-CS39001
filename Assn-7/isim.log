@@ -1,0 +1,20 @@
+ISim log file
+Running: /home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb /home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file_tb_isim_beh.wdb 
+ISim P.20131013 (signature 0xfbc00daa)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+time = 0, rs =  x, rt = d, readData1 =  x, readData2 =          x         x
+time = 8, rs = 21, rt = d, readData1 =  5, readData2 =          0         0
+time = 15, rs = 21, rt = d, readData1 =  5, readData2 =         45         0
+time = 25, rs = 21, rt = d, readData1 =  5, readData2 =          0         0
+time = 38, rs = 23, rt = d, readData1 =  5, readData2 =         45         0
+Stopped at time : 43 ns : File "/home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file_tb.v" Line 63
+# exit 0

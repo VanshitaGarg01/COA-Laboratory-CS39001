@@ -1,8 +1,8 @@
 module ALU_tb;
     
     // Inputs
-    reg [31:0] a;
-    reg [31:0] b; 
+    reg signed [31:0] a;
+    reg signed [31:0] b; 
     reg ALUsel;
     reg [4:0] ALUop; 
 

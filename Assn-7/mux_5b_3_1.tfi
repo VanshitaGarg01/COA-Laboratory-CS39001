@@ -1,0 +1,13 @@
+
+
+
+// Instantiate the module
+mux_5b_3_1 instance_name (
+    .a0(a0), 
+    .a1(a1), 
+    .a2(a2), 
+    .sel(sel), 
+    .out(out)
+    );
+
+

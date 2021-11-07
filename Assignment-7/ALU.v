@@ -1,6 +1,6 @@
 module ALU (
-    input [31:0] a, 
-    input [31:0] b, 
+    input signed [31:0] a, 
+    input signed [31:0] b, 
     input ALUsel, 
     input [4:0] ALUop, 
     output reg carry, 
@@ -14,7 +14,7 @@ module ALU (
 
     // not not1 (not1Out, b);
 
-    mux_32b_2_1 mux1 (.a0(a), .a1(32'd1), .sel(ALUsel), .out(mux1Out));
+    mux_32b_2_1 mux1 (.a0(a), .a1(32'b00000000000000000000000000000001), .sel(ALUsel), .out(mux1Out));
     mux_32b_2_1 mux2 (.a0(b), .a1(not1Out), .sel(ALUsel), .out(mux2Out));
 
     adder_32_bit adder1 (.a(a), .b(b), .c_in(1'b0), .c_out(carryTemp), .sum(adder1Out));
@@ -27,8 +27,9 @@ module ALU (
     assign not1Out = ~b;
     assign and1Out = mux1Out & mux2Out;
     assign xor1Out = mux1Out ^ mux2Out;
+
     always @(*) begin
-        $display($time, ", a = %d, b = %d", mux1Out, mux2Out);
+        $display($time, ", a = %b, b = %b, notb = %b", mux1Out, mux2Out, not1Out);
         if (ALUop == 5'b00000) begin
             result = mux1Out;
         end else if (ALUop == 5'b00001) begin
@@ -45,7 +46,7 @@ module ALU (
         end else if (ALUop[4:2] == 3'b010) begin
             result = barrelShifter1Out;
         end else begin
-            result = 32'd0;
+            result = 32'b00000000000000000000000000000000;
         end
     end
 
@@ -55,11 +56,7 @@ module ALU (
         end else begin
             zero = 1'b0;
         end
-        if (result < 0) begin
-            sign = 1'b1;
-        end else begin
-            sign = 1'b0;
-        end
+        sign = result[31];
     end
     
 endmodule

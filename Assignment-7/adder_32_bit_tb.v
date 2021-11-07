@@ -10,7 +10,7 @@ module adder_32_bit_tb;
     wire c_out;
 
     // Instantiate the unit under test
-    adder UUT(.a(A), .b(B), .c_in(c_in), .sum(sum), .c_out(c_out));
+    adder_32_bit UUT(.a(A), .b(B), .c_in(c_in), .sum(sum), .c_out(c_out));
 
     initial begin
         // Monitor the changes

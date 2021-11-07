@@ -1,5 +1,5 @@
 // Testbench for 4-bit carry look-ahead adder module with augmentation to compute next level block generate and propagate
-module cla_4_bit_augmented_tb;
+module cla_4_bit_tb;
 
     // Inputs
     reg [3:0] A = 4'b0000, B = 4'b0000;

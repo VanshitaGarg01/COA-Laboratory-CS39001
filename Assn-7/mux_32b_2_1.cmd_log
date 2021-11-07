@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj Assn-7 -o /home/vanshita/COA-Laboratory-CS39001/Assn-7/mux_32b_2_1.tfi -lib work /home/vanshita/COA-Laboratory-CS39001/Assn-7//mux_32b_2_1.v -module mux_32b_2_1 -template /home/vanshita/Downloads/Xilinx/14.7/ISE_DS/ISE//data/tfi.tft -deleteonerror 
