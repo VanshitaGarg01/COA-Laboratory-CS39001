@@ -7,7 +7,7 @@ module instruction_decode (
     output [4:0] rs,
     output [4:0] rt,
     output [4:0] shamt,
-    output [16:0] imm
+    output [15:0] imm
 );
 
     assign opcode = instruction[31:26];

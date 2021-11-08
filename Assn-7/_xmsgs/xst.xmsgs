@@ -5,10 +5,55 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLCompiler" num="806" delta="old" >"/home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file.v" Line 43: Syntax error near &quot;<arg fmt="%s" index="1">+</arg>&quot;.
+<msg type="warning" file="HDLCompiler" num="1499" delta="old" >"/home/vanshita/COA-Laboratory-CS39001/Assn-7/bram_instr_mem.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">bram_instr_mem</arg>&gt; remains a black box.
 </msg>
 
-<msg type="error" file="HDLCompiler" num="598" delta="old" >"/home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file.v" Line 21: Module &lt;<arg fmt="%s" index="1">register_file</arg>&gt; ignored due to previous errors.
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.v" Line 74: Assignment to <arg fmt="%s" index="1">shamt</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/vanshita/COA-Laboratory-CS39001/Assn-7/adder_32_bit.v" Line 43: Assignment to <arg fmt="%s" index="1">P1</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/vanshita/COA-Laboratory-CS39001/Assn-7/adder_32_bit.v" Line 44: Assignment to <arg fmt="%s" index="1">P2</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1499" delta="old" >"/home/vanshita/COA-Laboratory-CS39001/Assn-7/ipcore_dir/bram_data_mem.v" Line 39: Empty module &lt;<arg fmt="%s" index="1">bram_data_mem</arg>&gt; remains a black box.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.v</arg>&quot; line <arg fmt="%s" index="2">66</arg>: Output port &lt;<arg fmt="%s" index="3">shamt</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">instructionDecoder</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">func</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">carry</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/vanshita/COA-Laboratory-CS39001/Assn-7/adder_32_bit.v</arg>&quot; line <arg fmt="%s" index="2">43</arg>: Output port &lt;<arg fmt="%s" index="3">P</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">CLA1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/vanshita/COA-Laboratory-CS39001/Assn-7/adder_32_bit.v</arg>&quot; line <arg fmt="%s" index="2">43</arg>: Output port &lt;<arg fmt="%s" index="3">G</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">CLA1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/vanshita/COA-Laboratory-CS39001/Assn-7/adder_32_bit.v</arg>&quot; line <arg fmt="%s" index="2">44</arg>: Output port &lt;<arg fmt="%s" index="3">P</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">CLA2</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/vanshita/COA-Laboratory-CS39001/Assn-7/adder_32_bit.v</arg>&quot; line <arg fmt="%s" index="2">44</arg>: Output port &lt;<arg fmt="%s" index="3">G</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">CLA2</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v</arg>&quot; line <arg fmt="%s" index="2">43</arg>: Output port &lt;<arg fmt="%s" index="3">c_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">cla1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v</arg>&quot; line <arg fmt="%s" index="2">44</arg>: Output port &lt;<arg fmt="%s" index="3">c_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">cla2</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v</arg>&quot; line <arg fmt="%s" index="2">45</arg>: Output port &lt;<arg fmt="%s" index="3">c_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">cla3</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v</arg>&quot; line <arg fmt="%s" index="2">46</arg>: Output port &lt;<arg fmt="%s" index="3">c_out</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">cla4</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 </msg>
 
 </messages>

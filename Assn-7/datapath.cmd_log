@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.xst" -ofn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.syr" 

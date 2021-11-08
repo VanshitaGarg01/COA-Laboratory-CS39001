@@ -12,10 +12,19 @@ module datapath (
     input lblSel,
     input clk,
     input rst,
-    output reg [5:0] opcode,
-    output reg [4:0] func
+    output [5:0] opcode,
+    output [4:0] func
 );
     parameter ra = 5'b11111;
+
+    wire enable;
+    wire carry, zero, sign, validJump;
+    wire [31:0] nextInstrAddr, instrAddr, instruction, writeData, readData1, readData2, SE1out, b, result, nextPC, dataMemReadData;
+    wire [25:0] label0;
+    wire [15:0] label1, imm;
+    wire [4:0] rs, rt, shamt, writeReg;
+
+    assign enable = memRead | memWrite;
 
     program_counter PC (
         .nextInstrAddr(nextInstrAddr),
@@ -63,22 +72,71 @@ module datapath (
         .readData2(readData2)
     );
 
-    // mux_32b_2_1 MUX2 (
-    //     .a0()
-    // );
+    immediate_sign_extend SE1 (
+        .opcode(opcode),
+        .func(func),
+        .instr(imm),
+        .extendImm(SE1out)
+    );
 
-    mux_32b_2_1 MUX3 (
+    mux_32b_2_1 MUX2 (
         .a0(readData2),
-        .a1(mux2Out),
+        .a1(SE1out),
         .sel(ALUsrc), 
         .out(b)
     );
 
     ALU ALU1 (
-        
+        .a(readData1),
+        .b(b),
+        .ALUsel(ALUsel),
+        .ALUop(ALUop),
+        .carry(carry),
+        .zero(zero), 
+        .sign(sign),
+        .result(result)
     );
 
+    jump_control JC (
+        .opcode(opcode),
+        .sign(sign),
+        .carry(carry),
+        .zero(zero),
+        .validJump(validJump)
+    );
 
+    PC_increment PCInc (
+        .instrAddr(instrAddr),
+        .nextPC(nextPC)
+    );
 
+    branch_unit branchUnit (
+        .nextPC(nextPC),
+        .label0(label0),
+        .label1(label1),
+        .rsAddr(readData1),
+        .lblSel(lblSel),
+        .jumpAddr(jumpAddr),
+        .branch(branch),
+        .validJump(validJump),
+        .nextAddr(nextInstrAddr)
+    );
+
+    bram_data_mem dataMemory (
+        .clka(clk),
+        .ena(enable),
+        .wea(memWrite),
+        .addra(result[9:0]),
+        .dina(readData2),
+        .douta(dataMemReadData)
+    );
+
+    mux_32b_3_1 MUX3 (
+        .a0(nextPC),
+        .a1(dataMemReadData),
+        .a2(result),
+        .sel(memToReg),
+        .out(writeData)
+    );
 
 endmodule

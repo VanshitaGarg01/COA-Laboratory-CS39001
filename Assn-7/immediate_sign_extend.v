@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    02:19:51 11/08/2021 
+// Create Date:    18:40:20 11/08/2021 
 // Design Name: 
-// Module Name:    program_counter 
+// Module Name:    immediate_sign_extend 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,20 +18,17 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module program_counter (
-    input [31:0] nextInstrAddr,
-    input clk, 
-    input rst,
-    output reg [31:0] instrAddr
+module immediate_sign_extend (
+    input [5:0] opcode,
+    input [4:0] func,       // not used here
+    input [15:0] instr,
+    output reg [31:0] extendImm
 );
-
-    always @(posedge clk or posedge rst) begin
-        if (rst) begin
-            instrAddr <= 32'b00000000000000000000000000000000;
+    always @(*) begin
+        if (opcode == 6'b000010) begin
+            extendImm = {{27{instr[15]}}, instr[15:11]};
         end else begin
-            instrAddr <= nextInstrAddr;
+            extendImm = {{16{instr[15]}}, instr};
         end
     end
-
 endmodule
-
