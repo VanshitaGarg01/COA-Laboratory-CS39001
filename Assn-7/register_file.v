@@ -39,10 +39,10 @@ module register_file (
                 registerBank[i] <= 32'b00000000000000000000000000000000;
         end else if (regWrite) begin
             registerBank[writeReg] <= writeData;
-        end else begin
-            for (i = 0; i < 32; i = i + 1)
-                registerBank[i] <= 32'b00000000000000000000000000000000;
-        end
+        end 
+        
+        //sfds
+        $display ($time, ", writeReg = %d, wrteData = %d, regWrite = %b", writeReg, writeData, regWrite);
     end
 
     always @(*) begin

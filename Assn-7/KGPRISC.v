@@ -20,7 +20,8 @@
 //////////////////////////////////////////////////////////////////////////////////
 module KGPRISC (
     input clk,
-    input rst
+    input rst,
+    output [31:0] instruction, instrAddr, result, nextPC
 );
     wire [5:0] opcode;
     wire [4:0] func;
@@ -35,6 +36,7 @@ module KGPRISC (
     wire branch;
     wire jumpAddr;
     wire lblSel;
+    
 
     control_unit CU (
         .opcode(opcode),
@@ -67,6 +69,10 @@ module KGPRISC (
         .jumpAddr(jumpAddr),
         .lblSel(lblSel),
         .clk(clk),
-        .rst(rst)
+        .rst(rst),
+        .instruction(instruction),
+        .instrAddr(instrAddr),
+        .result(result),
+        .nextPC(nextPC)
     );
 endmodule

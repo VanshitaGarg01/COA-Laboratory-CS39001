@@ -37,7 +37,7 @@ module ALU (
     mux_32b_2_1 mux1 (.a0(a), .a1(32'b00000000000000000000000000000001), .sel(ALUsel), .out(mux1Out));
     mux_32b_2_1 mux2 (.a0(b), .a1(not1Out), .sel(ALUsel), .out(mux2Out));
 
-    adder_32_bit adder1 (.a(a), .b(b), .c_in(1'b0), .c_out(carryTemp), .sum(adder1Out));
+    adder_32_bit adder1 (.a(mux1Out), .b(mux2Out), .c_in(1'b0), .c_out(carryTemp), .sum(adder1Out));
 
     barrel_shifter barrelShifter1 (.in(mux1Out), .shamt(mux2Out), .dir(ALUop[1]), .out(barrelShifter1Out), .aorl(ALUop[0]));
 
@@ -49,7 +49,7 @@ module ALU (
     assign xor1Out = mux1Out ^ mux2Out;
 
     always @(*) begin
-        $display($time, ", a = %b, b = %b, notb = %b", mux1Out, mux2Out, not1Out);
+        
         if (ALUop == 5'b00000) begin
             result = mux1Out;
         end else if (ALUop == 5'b00001) begin
@@ -68,6 +68,7 @@ module ALU (
         end else begin
             result = 32'b00000000000000000000000000000000;
         end
+        $display($time, ", A = %b, a = %b, b = %b, notb = %b, result = %b", a, mux1Out, mux2Out, not1Out, result);
     end
 
     always @(result) begin

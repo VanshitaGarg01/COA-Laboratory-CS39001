@@ -34,20 +34,23 @@ module datapath (
     input clk,
     input rst,
     output [5:0] opcode,
-    output [4:0] func
+    output [4:0] func,
+    output [31:0] instruction,//
+    output [31:0] instrAddr, result, nextPC//
+    
 );
     parameter ra = 5'b11111;
 
     wire enable;
     wire carry, zero, sign, validJump;
-    wire [31:0] nextInstrAddr, instrAddr, instruction, writeData, readData1, readData2, SE1out, b, result, nextPC, dataMemReadData;
+    wire [31:0] nextInstrAddr, writeData, readData1, readData2, SE1out, b, dataMemReadData;
     wire [25:0] label0;
     wire [15:0] label1, imm;
     wire [4:0] rs, rt, shamt, writeReg;
     wire [31:0] offset;
     
     assign enable = memRead | memWrite;
-    assign offset = instrAddr >>> 3'b100;
+    assign offset = nextInstrAddr >>> 2'b10;
     
     program_counter PC (
         .nextInstrAddr(nextInstrAddr),

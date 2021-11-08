@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: KGPRISC.prj
@@ -170,11 +170,13 @@ Elaborating module <bram_instr_mem>.
 WARNING:HDLCompiler:1499 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/bram_instr_mem.v" Line 39: Empty module <bram_instr_mem> remains a black box.
 
 Elaborating module <instruction_decode>.
-WARNING:HDLCompiler:1127 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.v" Line 74: Assignment to shamt ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.v" Line 77: Assignment to shamt ignored, since the identifier is never used
 
 Elaborating module <mux_5b_3_1>.
 
 Elaborating module <register_file>.
+WARNING:HDLCompiler:91 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file.v" Line 48: Signal <writeReg> missing in the sensitivity list is added for synthesis purposes. HDL and post-synthesis simulations may differ as a result.
+"/home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file.v" Line 48. $display  $time, writeReg = 0, wrteData = 0
 
 Elaborating module <immediate_sign_extend>.
 
@@ -193,7 +195,6 @@ WARNING:HDLCompiler:1127 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/adder_3
 WARNING:HDLCompiler:1127 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/adder_32_bit.v" Line 44: Assignment to P2 ignored, since the identifier is never used
 
 Elaborating module <barrel_shifter>.
-"/home/vanshita/COA-Laboratory-CS39001/Assn-7/ALU.v" Line 52. $display  $time, a = 32'b................................, b = 32'b................................, notb = 32'b................................
 
 Elaborating module <jump_control>.
 
@@ -225,7 +226,7 @@ Unit <control_unit> synthesized.
 Synthesizing Unit <datapath>.
     Related source file is "/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.v".
         ra = 5'b11111
-INFO:Xst:3210 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.v" line 66: Output port <shamt> of the instance <instructionDecoder> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.v" line 69: Output port <shamt> of the instance <instructionDecoder> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <datapath> synthesized.
@@ -253,8 +254,8 @@ Unit <mux_5b_3_1> synthesized.
 Synthesizing Unit <register_file>.
     Related source file is "/home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file.v".
     Found 1024-bit register for signal <n0043>.
-    Found 32-bit 32-to-1 multiplexer for signal <readData1> created at line 49.
-    Found 32-bit 32-to-1 multiplexer for signal <readData2> created at line 50.
+    Found 32-bit 32-to-1 multiplexer for signal <readData1> created at line 52.
+    Found 32-bit 32-to-1 multiplexer for signal <readData2> created at line 53.
     Summary:
 	inferred 1024 D-type flip-flop(s).
 	inferred  34 Multiplexer(s).
@@ -467,17 +468,17 @@ Top Level Output File Name         : KGPRISC.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2726
+# BELS                             : 2682
 #      GND                         : 3
-#      INV                         : 1
-#      LUT1                        : 28
-#      LUT2                        : 14
-#      LUT3                        : 34
-#      LUT4                        : 97
-#      LUT5                        : 1232
-#      LUT6                        : 1159
+#      INV                         : 2
+#      LUT1                        : 29
+#      LUT2                        : 23
+#      LUT3                        : 22
+#      LUT4                        : 70
+#      LUT5                        : 1214
+#      LUT6                        : 1146
 #      MUXCY                       : 29
-#      MUXF7                       : 96
+#      MUXF7                       : 111
 #      VCC                         : 3
 #      XORCY                       : 30
 # FlipFlops/Latches                : 1057
@@ -487,8 +488,9 @@ Primitive and Black Box Usage:
 #      RAMB36E1                    : 2
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 1
+# IO Buffers                       : 97
 #      IBUF                        : 1
+#      OBUF                        : 96
 
 Device utilization summary:
 ---------------------------
@@ -498,19 +500,19 @@ Selected Device : 7a100tcsg324-1
 
 Slice Logic Utilization: 
  Number of Slice Registers:            1057  out of  126800     0%  
- Number of Slice LUTs:                 2565  out of  63400     4%  
-    Number used as Logic:              2565  out of  63400     4%  
+ Number of Slice LUTs:                 2506  out of  63400     3%  
+    Number used as Logic:              2506  out of  63400     3%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2565
-   Number with an unused Flip Flop:    1508  out of   2565    58%  
-   Number with an unused LUT:             0  out of   2565     0%  
-   Number of fully used LUT-FF pairs:  1057  out of   2565    41%  
+ Number of LUT Flip Flop pairs used:   2506
+   Number with an unused Flip Flop:    1449  out of   2506    57%  
+   Number with an unused LUT:             0  out of   2506     0%  
+   Number of fully used LUT-FF pairs:  1057  out of   2506    42%  
    Number of unique control sets:         2
 
 IO Utilization: 
- Number of IOs:                           2
- Number of bonded IOBs:                   2  out of    210     0%  
+ Number of IOs:                          98
+ Number of bonded IOBs:                  98  out of    210    46%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                2  out of    135     1%  
@@ -559,9 +561,9 @@ Timing Summary:
 ---------------
 Speed Grade: -1
 
-   Minimum period: 9.989ns (Maximum Frequency: 100.115MHz)
+   Minimum period: 9.907ns (Maximum Frequency: 100.943MHz)
    Minimum input arrival time before clock: 1.173ns
-   Maximum output required time after clock: No path found
+   Maximum output required time after clock: 8.297ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -570,37 +572,36 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 9.989ns (frequency: 100.115MHz)
-  Total number of paths / destination ports: 15040563 / 1088
+  Clock period: 9.907ns (frequency: 100.943MHz)
+  Total number of paths / destination ports: 15870003 / 1088
 -------------------------------------------------------------------------
-Delay:               9.989ns (Levels of Logic = 13)
-  Source:            DP/registerFile/registerBank_0_834 (FF)
+Delay:               9.907ns (Levels of Logic = 12)
+  Source:            DP/registerFile/registerBank_0_863 (FF)
   Destination:       DP/PC/instrAddr_31 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: DP/registerFile/registerBank_0_834 to DP/PC/instrAddr_31
+  Data Path: DP/registerFile/registerBank_0_863 to DP/PC/instrAddr_31
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              3   0.478   0.790  DP/registerFile/registerBank_0_834 (DP/registerFile/registerBank_0_834)
-     LUT6:I2->O            1   0.124   0.776  DP/registerFile/Mmux_readData1_867 (DP/registerFile/Mmux_readData1_867)
-     LUT6:I2->O            1   0.124   0.000  DP/registerFile/Mmux_readData1_322 (DP/registerFile/Mmux_readData1_322)
-     MUXF7:I1->O          10   0.368   0.480  DP/registerFile/Mmux_readData1_2_f7_21 (DP/readData1<2>)
-     LUT6:I5->O            3   0.124   0.953  DP/ALU1/barrelShifter1/Sh41_SW2 (N293)
-     LUT6:I0->O            6   0.124   0.749  DP/ALU1/barrelShifter1/Sh31 (DP/ALU1/barrelShifter1/Sh3)
-     LUT6:I3->O            2   0.124   0.542  DP/ALU1/barrelShifter1/Sh431 (DP/ALU1/barrelShifter1/Sh43)
-     LUT6:I4->O            1   0.124   0.421  DP/ALU1/Mmux_result65 (DP/ALU1/Mmux_result66)
-     LUT6:I5->O            1   0.124   0.421  DP/ALU1/Mmux_result66 (DP/ALU1/Mmux_result67)
-     LUT6:I5->O            2   0.124   0.782  DP/ALU1/Mmux_result67 (DP/result<11>)
-     LUT5:I1->O            1   0.124   0.716  DP/ALU1/zero3_SW0 (N129)
-     LUT6:I3->O            1   0.124   0.421  DP/ALU1/zero6_SW0 (N544)
+     FDC:C->Q              3   0.478   0.790  DP/registerFile/registerBank_0_863 (DP/registerFile/registerBank_0_863)
+     LUT6:I2->O            1   0.124   0.776  DP/registerFile/Mmux_readData2_873 (DP/registerFile/Mmux_readData2_873)
+     LUT6:I2->O            1   0.124   0.000  DP/registerFile/Mmux_readData2_324 (DP/registerFile/Mmux_readData2_324)
+     MUXF7:I1->O           3   0.368   0.435  DP/registerFile/Mmux_readData2_2_f7_23 (DP/readData2<31>)
+     LUT4:I3->O            5   0.124   0.966  DP/ALU1/mux2/Mmux_out251 (DP/ALU1/mux2Out<31>)
+     LUT6:I0->O            4   0.124   0.796  DP/ALU1/barrelShifter1/out2 (DP/ALU1/barrelShifter1/out1)
+     LUT6:I2->O           57   0.124   0.557  DP/ALU1/barrelShifter1/out7 (DP/ALU1/barrelShifter1/_n0015)
+     MUXF7:S->O            1   0.465   0.536  DP/ALU1/Mmux_result5210_SW1 (N367)
+     LUT6:I4->O            4   0.124   0.939  DP/ALU1/Mmux_result5211 (result_3_OBUF)
+     LUT6:I1->O            1   0.124   0.536  DP/ALU1/zero3_SW0_SW1 (N295)
+     LUT6:I4->O            1   0.124   0.421  DP/ALU1/zero4 (DP/ALU1/zero3)
      LUT6:I5->O           32   0.124   0.574  DP/branchUnit/isJump4 (DP/branchUnit/isJump)
      LUT5:I4->O            1   0.124   0.000  DP/branchUnit/M3/Mmux_out110 (DP/nextInstrAddr<0>)
      FDC:D                     0.030          DP/PC/instrAddr_0
     ----------------------------------------
-    Total                      9.989ns (2.364ns logic, 7.625ns route)
-                                       (23.7% logic, 76.3% route)
+    Total                      9.907ns (2.581ns logic, 7.326ns route)
+                                       (26.1% logic, 73.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
@@ -622,6 +623,35 @@ Offset:              1.173ns (Levels of Logic = 1)
                                        (42.2% logic, 57.8% route)
 
 =========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 239360 / 64
+-------------------------------------------------------------------------
+Offset:              8.297ns (Levels of Logic = 11)
+  Source:            DP/registerFile/registerBank_0_863 (FF)
+  Destination:       result<17> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: DP/registerFile/registerBank_0_863 to result<17>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              3   0.478   0.790  DP/registerFile/registerBank_0_863 (DP/registerFile/registerBank_0_863)
+     LUT6:I2->O            1   0.124   0.776  DP/registerFile/Mmux_readData2_873 (DP/registerFile/Mmux_readData2_873)
+     LUT6:I2->O            1   0.124   0.000  DP/registerFile/Mmux_readData2_324 (DP/registerFile/Mmux_readData2_324)
+     MUXF7:I1->O           3   0.368   0.435  DP/registerFile/Mmux_readData2_2_f7_23 (DP/readData2<31>)
+     LUT4:I3->O            5   0.124   0.966  DP/ALU1/mux2/Mmux_out251 (DP/ALU1/mux2Out<31>)
+     LUT6:I0->O            4   0.124   0.796  DP/ALU1/barrelShifter1/out2 (DP/ALU1/barrelShifter1/out1)
+     LUT6:I2->O           57   0.124   0.557  DP/ALU1/barrelShifter1/out7 (DP/ALU1/barrelShifter1/_n0015)
+     MUXF7:S->O            1   0.465   0.421  DP/ALU1/Mmux_result184_SW1 (N172)
+     LUT6:I5->O            1   0.124   0.421  DP/ALU1/Mmux_result186 (DP/ALU1/Mmux_result185)
+     LUT6:I5->O            2   0.124   0.427  DP/ALU1/Mmux_result188 (DP/ALU1/Mmux_result187)
+     LUT5:I4->O            2   0.124   0.405  DP/ALU1/Mmux_result1810 (result_17_OBUF)
+     OBUF:I->O                 0.000          result_17_OBUF (result<17>)
+    ----------------------------------------
+    Total                      8.297ns (2.303ns logic, 5.994ns route)
+                                       (27.8% logic, 72.2% route)
+
+=========================================================================
 
 Cross Clock Domains Report:
 --------------------------
@@ -631,7 +661,7 @@ Clock to Setup on destination clock DP/ALU1/ALUop[4]_GND_11_o_equal_4_o
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    8.611|         |         |         |
+clk            |    8.381|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock clk
@@ -639,22 +669,22 @@ Clock to Setup on destination clock clk
                                    | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                       |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------------+---------+---------+---------+---------+
-DP/ALU1/ALUop[4]_GND_11_o_equal_4_o|    4.398|         |         |         |
-clk                                |    9.989|         |         |         |
+DP/ALU1/ALUop[4]_GND_11_o_equal_4_o|    4.341|         |         |         |
+clk                                |    9.907|         |         |         |
 -----------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 23.27 secs
+Total REAL time to Xst completion: 40.00 secs
+Total CPU time to Xst completion: 39.01 secs
  
 --> 
 
 
-Total memory usage is 503728 kilobytes
+Total memory usage is 503772 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    7 (   0 filtered)
+Number of warnings :    8 (   0 filtered)
 Number of infos    :   10 (   0 filtered)
 

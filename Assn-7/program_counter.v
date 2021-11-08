@@ -27,7 +27,7 @@ module program_counter (
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
-            instrAddr <= 32'b00000000000000000000000000000000;
+            instrAddr <= -32'd4;
         end else begin
             instrAddr <= nextInstrAddr;
         end

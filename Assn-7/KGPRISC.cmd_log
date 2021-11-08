@@ -2,3 +2,4 @@ xst -intstyle ise -ifn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC.xst
 xst -intstyle ise -ifn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC.xst" -ofn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC.syr" 
 xst -intstyle ise -ifn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC.xst" -ofn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC.syr" 
 xst -intstyle ise -ifn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC.xst" -ofn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC.syr" 
+xst -intstyle ise -ifn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC.xst" -ofn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC.syr" 

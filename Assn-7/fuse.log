@@ -1,21 +1,69 @@
-Running: /home/vanshita/Downloads/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file_tb_isim_beh.exe -prj /home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file_tb_beh.prj work.register_file_tb work.glbl 
+Running: /home/vanshita/Downloads/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC_tb_isim_beh.exe -prj /home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC_tb_beh.prj work.KGPRISC_tb work.glbl 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 4
 Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/lookahead_carry_unit.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_4_bit.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/mux_32b_2_1.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/barrel_shifter.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/adder_32_bit.v" into library work
 Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file.v" into library work
-Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file_tb.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/program_counter.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/PC_increment.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/mux_5b_3_1.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/mux_32b_3_1.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/jump_control.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/ipcore_dir/bram_data_mem.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/instruction_decode.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/immediate_sign_extend.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/branch_unit.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/bram_instr_mem.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/ALU.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/control_unit.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC.v" into library work
+Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC_tb.v" into library work
 Analyzing Verilog file "/home/vanshita/Downloads/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 82948 KB
-Fuse CPU Usage: 1050 ms
+Fuse Memory Usage: 85300 KB
+Fuse CPU Usage: 1320 ms
+Compiling module control_unit
+Compiling module program_counter
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_output_stage(C_...
+Compiling module BLK_MEM_GEN_V7_3_softecc_output_...
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="artix...
+Compiling module bram_instr_mem
+Compiling module instruction_decode
+Compiling module mux_5b_3_1
 Compiling module register_file
-Compiling module register_file_tb
+Compiling module immediate_sign_extend
+Compiling module mux_32b_2_1
+Compiling module cla_4_bit
+Compiling module lookahead_carry_unit
+Compiling module cla_16_bit
+Compiling module adder_32_bit
+Compiling module barrel_shifter
+Compiling module ALU
+Compiling module jump_control
+Compiling module PC_increment
+Compiling module branch_unit
+Compiling module BLK_MEM_GEN_V7_3_mem_module(C_CO...
+Compiling module BLK_MEM_GEN_V7_3(C_FAMILY="artix...
+Compiling module bram_data_mem
+Compiling module mux_32b_3_1
+Compiling module datapath
+Compiling module KGPRISC
+Compiling module KGPRISC_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Compiled 3 Verilog Units
-Built simulation executable /home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file_tb_isim_beh.exe
-Fuse Memory Usage: 643144 KB
-Fuse CPU Usage: 1060 ms
-GCC CPU Usage: 360 ms
+Waiting for 22 sub-compilation(s) to finish...
+Compiled 30 Verilog Units
+Built simulation executable /home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC_tb_isim_beh.exe
+Fuse Memory Usage: 648756 KB
+Fuse CPU Usage: 1460 ms
+GCC CPU Usage: 4390 ms
