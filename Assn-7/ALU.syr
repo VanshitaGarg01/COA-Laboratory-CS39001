@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.04 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: ALU.prj
@@ -102,6 +102,9 @@ DSP48 Utilization Ratio            : 100
 Auto BRAM Packing                  : NO
 Slice Utilization Ratio Delta      : 5
 
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
 =========================================================================
 
 
@@ -142,7 +145,9 @@ WARNING:HDLCompiler:1127 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/adder_3
 WARNING:HDLCompiler:1127 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/adder_32_bit.v" Line 44: Assignment to P2 ignored, since the identifier is never used
 
 Elaborating module <barrel_shifter>.
-"/home/vanshita/COA-Laboratory-CS39001/Assn-7/ALU.v" Line 52. $display  $time, a = 32'b................................, b = 32'b................................, notb = 32'b................................
+"/home/vanshita/COA-Laboratory-CS39001/Assn-7/ALU.v" Line 58. $display opcode=5'b.....
+"/home/vanshita/COA-Laboratory-CS39001/Assn-7/ALU.v" Line 72. $display ***
+"/home/vanshita/COA-Laboratory-CS39001/Assn-7/ALU.v" Line 74. $display  $time, A = 32'sb................................, a = 32'b................................, b = 32'b................................, notb = 32'b................................, result = 32'b................................, carry = 1'b., cT = 1'b.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -288,13 +293,13 @@ Top Level Output File Name         : ALU.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 471
-#      LUT2                        : 68
-#      LUT3                        : 13
-#      LUT4                        : 52
-#      LUT5                        : 90
-#      LUT6                        : 239
-#      MUXF7                       : 9
+# BELS                             : 477
+#      LUT2                        : 64
+#      LUT3                        : 18
+#      LUT4                        : 56
+#      LUT5                        : 59
+#      LUT6                        : 275
+#      MUXF7                       : 5
 # FlipFlops/Latches                : 1
 #      LDE_1                       : 1
 # IO Buffers                       : 105
@@ -308,14 +313,14 @@ Selected Device : 7a100tcsg324-1
 
 
 Slice Logic Utilization: 
- Number of Slice LUTs:                  462  out of  63400     0%  
-    Number used as Logic:               462  out of  63400     0%  
+ Number of Slice LUTs:                  472  out of  63400     0%  
+    Number used as Logic:               472  out of  63400     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    462
-   Number with an unused Flip Flop:     462  out of    462   100%  
-   Number with an unused LUT:             0  out of    462     0%  
-   Number of fully used LUT-FF pairs:     0  out of    462     0%  
+ Number of LUT Flip Flop pairs used:    472
+   Number with an unused Flip Flop:     472  out of    472   100%  
+   Number with an unused LUT:             0  out of    472     0%  
+   Number of fully used LUT-FF pairs:     0  out of    472     0%  
    Number of unique control sets:         1
 
 IO Utilization: 
@@ -362,9 +367,9 @@ Timing Summary:
 Speed Grade: -1
 
    Minimum period: No path found
-   Minimum input arrival time before clock: 11.944ns
+   Minimum input arrival time before clock: 11.313ns
    Maximum output required time after clock: 1.030ns
-   Maximum combinational path delay: 14.211ns
+   Maximum combinational path delay: 13.515ns
 
 Timing Details:
 ---------------
@@ -372,38 +377,38 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'ALUop[4]_GND_1_o_equal_4_o'
-  Total number of paths / destination ports: 69 / 2
+  Total number of paths / destination ports: 127 / 2
 -------------------------------------------------------------------------
-Offset:              11.944ns (Levels of Logic = 17)
-  Source:            b<2> (PAD)
+Offset:              11.313ns (Levels of Logic = 17)
+  Source:            ALUsel (PAD)
   Destination:       carry (LATCH)
   Destination Clock: ALUop[4]_GND_1_o_equal_4_o rising
 
-  Data Path: b<2> to carry
+  Data Path: ALUsel to carry
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            29   0.001   1.071  b_2_IBUF (b_2_IBUF)
-     LUT6:I1->O            2   0.124   0.722  adder1/CLA1/cla1/c<3><2>1 (adder1/CLA1/cla1/c<3>)
-     LUT3:I0->O            3   0.124   0.730  adder1/CLA1/cla1/G<3>1 (adder1/CLA1/c<1>)
-     LUT5:I2->O            3   0.124   0.435  adder1/CLA1/cla2/c<2><1>1 (adder1/CLA1/cla2/c<2>)
-     LUT5:I4->O            3   0.124   0.730  adder1/CLA1/lcu/c<2><1>4 (adder1/CLA1/c<2>)
-     LUT5:I2->O            3   0.124   0.435  adder1/CLA1/cla3/c<2><1>1 (adder1/CLA1/cla3/c<2>)
-     LUT5:I4->O            3   0.124   0.730  adder1/CLA1/lcu/c<3><2> (adder1/CLA1/c<3>)
-     LUT5:I2->O            3   0.124   0.435  adder1/CLA1/cla4/c<2><1>1 (adder1/CLA1/cla4/c<2>)
-     LUT5:I4->O            3   0.124   0.730  adder1/CLA1/lcu/G<3> (adder1/CLA1/G)
-     LUT5:I2->O            3   0.124   0.435  adder1/CLA2/cla1/c<2><1>1 (adder1/CLA2/cla1/c<2>)
-     LUT5:I4->O            3   0.124   0.730  adder1/CLA2/lcu/c<1> (adder1/CLA2/c<1>)
-     LUT5:I2->O            3   0.124   0.435  adder1/CLA2/cla2/c<2><1>1 (adder1/CLA2/cla2/c<2>)
-     LUT5:I4->O            3   0.124   0.730  adder1/CLA2/lcu/c<2><1> (adder1/CLA2/c<2>)
-     LUT5:I2->O            3   0.124   0.435  adder1/CLA2/cla3/c<2><1>1 (adder1/CLA2/cla3/c<2>)
-     LUT5:I4->O            3   0.124   0.730  adder1/CLA2/lcu/c<3><2> (adder1/CLA2/c<3>)
-     LUT5:I2->O            3   0.124   0.435  adder1/CLA2/cla4/c<2><1>1 (adder1/CLA2/cla4/c<2>)
-     LUT5:I4->O            1   0.124   0.000  adder1/CLA2/lcu/c_out (carryTemp)
+     IBUF:I->O           232   0.001   1.115  ALUsel_IBUF (ALUsel_IBUF)
+     LUT5:I0->O            5   0.124   0.563  adder1/CLA1/cla1/c<2><1>1 (adder1/CLA1/cla1/c<2>)
+     LUT6:I4->O            6   0.124   0.454  adder1/CLA1/cla1/G<3>1 (adder1/CLA1/c<1>)
+     LUT6:I5->O            1   0.124   0.536  adder1/CLA1/lcu/c<2><1>1 (adder1/CLA1/lcu/c<2><1>)
+     LUT6:I4->O            5   0.124   0.563  adder1/CLA1/lcu/c<2><1>2 (adder1/CLA1/c<2>)
+     LUT6:I4->O            4   0.124   0.556  adder1/CLA1/cla3/c<2><1>1 (adder1/CLA1/cla3/c<2>)
+     LUT6:I4->O            4   0.124   0.556  adder1/CLA1/lcu/c<3><2> (adder1/CLA1/c<3>)
+     LUT6:I4->O            3   0.124   0.550  adder1/CLA1/cla4/c<2><1>1 (adder1/CLA1/cla4/c<2>)
+     LUT6:I4->O            4   0.124   0.556  adder1/CLA1/lcu/G<3> (adder1/CLA1/G)
+     LUT6:I4->O            3   0.124   0.550  adder1/CLA2/cla1/c<2><1>1 (adder1/CLA2/cla1/c<2>)
+     LUT6:I4->O            4   0.124   0.556  adder1/CLA2/lcu/c<1> (adder1/CLA2/c<1>)
+     LUT6:I4->O            3   0.124   0.550  adder1/CLA2/cla2/c<2><1>1 (adder1/CLA2/cla2/c<2>)
+     LUT6:I4->O            4   0.124   0.556  adder1/CLA2/lcu/c<2><1> (adder1/CLA2/c<2>)
+     LUT6:I4->O            3   0.124   0.550  adder1/CLA2/cla3/c<2><1>1 (adder1/CLA2/cla3/c<2>)
+     LUT6:I4->O            4   0.124   0.556  adder1/CLA2/lcu/c<3><2> (adder1/CLA2/c<3>)
+     LUT6:I4->O            3   0.124   0.550  adder1/CLA2/cla4/c<2><1>1 (adder1/CLA2/cla4/c<2>)
+     LUT6:I4->O            1   0.124   0.000  adder1/CLA2/lcu/c_out (carryTemp)
      LDE_1:D                   0.011          carry
     ----------------------------------------
-    Total                     11.944ns (1.996ns logic, 9.948ns route)
-                                       (16.7% logic, 83.3% route)
+    Total                     11.313ns (1.996ns logic, 9.317ns route)
+                                       (17.6% logic, 82.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'ALUop[4]_GND_1_o_equal_4_o'
@@ -426,40 +431,39 @@ Offset:              1.030ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 19112 / 34
+  Total number of paths / destination ports: 22290 / 34
 -------------------------------------------------------------------------
-Delay:               14.211ns (Levels of Logic = 21)
-  Source:            b<2> (PAD)
+Delay:               13.515ns (Levels of Logic = 20)
+  Source:            ALUsel (PAD)
   Destination:       zero (PAD)
 
-  Data Path: b<2> to zero
+  Data Path: ALUsel to zero
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            29   0.001   1.071  b_2_IBUF (b_2_IBUF)
-     LUT6:I1->O            2   0.124   0.722  adder1/CLA1/cla1/c<3><2>1 (adder1/CLA1/cla1/c<3>)
-     LUT3:I0->O            3   0.124   0.730  adder1/CLA1/cla1/G<3>1 (adder1/CLA1/c<1>)
-     LUT5:I2->O            3   0.124   0.435  adder1/CLA1/cla2/c<2><1>1 (adder1/CLA1/cla2/c<2>)
-     LUT5:I4->O            3   0.124   0.730  adder1/CLA1/lcu/c<2><1>4 (adder1/CLA1/c<2>)
-     LUT5:I2->O            3   0.124   0.435  adder1/CLA1/cla3/c<2><1>1 (adder1/CLA1/cla3/c<2>)
-     LUT5:I4->O            3   0.124   0.730  adder1/CLA1/lcu/c<3><2> (adder1/CLA1/c<3>)
-     LUT5:I2->O            3   0.124   0.435  adder1/CLA1/cla4/c<2><1>1 (adder1/CLA1/cla4/c<2>)
-     LUT5:I4->O            3   0.124   0.730  adder1/CLA1/lcu/G<3> (adder1/CLA1/G)
-     LUT5:I2->O            3   0.124   0.435  adder1/CLA2/cla1/c<2><1>1 (adder1/CLA2/cla1/c<2>)
-     LUT5:I4->O            3   0.124   0.730  adder1/CLA2/lcu/c<1> (adder1/CLA2/c<1>)
-     LUT5:I2->O            3   0.124   0.435  adder1/CLA2/cla2/c<2><1>1 (adder1/CLA2/cla2/c<2>)
-     LUT5:I4->O            3   0.124   0.730  adder1/CLA2/lcu/c<2><1> (adder1/CLA2/c<2>)
-     LUT5:I2->O            3   0.124   0.435  adder1/CLA2/cla3/c<2><1>1 (adder1/CLA2/cla3/c<2>)
-     LUT5:I4->O            3   0.124   0.730  adder1/CLA2/lcu/c<3><2> (adder1/CLA2/c<3>)
-     LUT5:I2->O            3   0.124   0.730  adder1/CLA2/cla4/c<2><1>1 (adder1/CLA2/cla4/c<2>)
-     LUT3:I0->O            1   0.124   0.536  adder1/CLA2/cla4/c<3><2>1 (adder1/CLA2/cla4/c<3>)
-     LUT5:I3->O            1   0.124   0.000  Mmux_result6413_F (N90)
-     MUXF7:I0->O           3   0.365   0.435  Mmux_result6413 (sign_OBUF)
-     LUT4:I3->O            1   0.124   0.399  zero7 (zero_OBUF)
+     IBUF:I->O           232   0.001   1.115  ALUsel_IBUF (ALUsel_IBUF)
+     LUT5:I0->O            5   0.124   0.563  adder1/CLA1/cla1/c<2><1>1 (adder1/CLA1/cla1/c<2>)
+     LUT6:I4->O            6   0.124   0.454  adder1/CLA1/cla1/G<3>1 (adder1/CLA1/c<1>)
+     LUT6:I5->O            1   0.124   0.536  adder1/CLA1/lcu/c<2><1>1 (adder1/CLA1/lcu/c<2><1>)
+     LUT6:I4->O            5   0.124   0.563  adder1/CLA1/lcu/c<2><1>2 (adder1/CLA1/c<2>)
+     LUT6:I4->O            4   0.124   0.556  adder1/CLA1/cla3/c<2><1>1 (adder1/CLA1/cla3/c<2>)
+     LUT6:I4->O            4   0.124   0.556  adder1/CLA1/lcu/c<3><2> (adder1/CLA1/c<3>)
+     LUT6:I4->O            3   0.124   0.550  adder1/CLA1/cla4/c<2><1>1 (adder1/CLA1/cla4/c<2>)
+     LUT6:I4->O            4   0.124   0.556  adder1/CLA1/lcu/G<3> (adder1/CLA1/G)
+     LUT6:I4->O            3   0.124   0.550  adder1/CLA2/cla1/c<2><1>1 (adder1/CLA2/cla1/c<2>)
+     LUT6:I4->O            4   0.124   0.556  adder1/CLA2/lcu/c<1> (adder1/CLA2/c<1>)
+     LUT6:I4->O            3   0.124   0.550  adder1/CLA2/cla2/c<2><1>1 (adder1/CLA2/cla2/c<2>)
+     LUT6:I4->O            4   0.124   0.556  adder1/CLA2/lcu/c<2><1> (adder1/CLA2/c<2>)
+     LUT6:I4->O            3   0.124   0.550  adder1/CLA2/cla3/c<2><1>1 (adder1/CLA2/cla3/c<2>)
+     LUT6:I4->O            4   0.124   0.556  adder1/CLA2/lcu/c<3><2> (adder1/CLA2/c<3>)
+     LUT6:I4->O            3   0.124   0.790  adder1/CLA2/cla4/c<2><1>1 (adder1/CLA2/cla4/c<2>)
+     LUT4:I0->O            1   0.124   0.776  adder1/CLA2/cla4/c<3><2>1 (adder1/CLA2/cla4/c<3>)
+     LUT6:I2->O            3   0.124   0.550  Mmux_result6414 (sign_OBUF)
+     LUT5:I3->O            1   0.124   0.399  zero7 (zero_OBUF)
      OBUF:I->O                 0.000          zero_OBUF (zero)
     ----------------------------------------
-    Total                     14.211ns (2.598ns logic, 11.613ns route)
-                                       (18.3% logic, 81.7% route)
+    Total                     13.515ns (2.233ns logic, 11.282ns route)
+                                       (16.5% logic, 83.5% route)
 
 =========================================================================
 
@@ -469,13 +473,13 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.34 secs
+Total REAL time to Xst completion: 13.00 secs
+Total CPU time to Xst completion: 12.09 secs
  
 --> 
 
 
-Total memory usage is 487320 kilobytes
+Total memory usage is 487340 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    3 (   0 filtered)

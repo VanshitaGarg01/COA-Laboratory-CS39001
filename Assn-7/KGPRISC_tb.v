@@ -27,7 +27,9 @@ module KGPRISC_tb;
 	// Inputs
 	reg clk;
 	reg rst;
-    wire [31:0] ins, add, result, nextPC;
+    wire [31:0] ins, add, result, nextPC, dataMemReadData;
+    wire [4:0] ALUop;
+    wire carry, zero,sign, validJump, lastCarry;
 
 	// Instantiate the Unit Under Test (UUT)
 	KGPRISC uut (
@@ -36,7 +38,14 @@ module KGPRISC_tb;
         .instruction(ins),
         .instrAddr(add),
         .result(result),
-        .nextPC(nextPC)
+        .nextPC(nextPC),
+        .ALUop(ALUop),
+        .carry(carry), 
+        .zero(zero), 
+        .sign(sign), 
+        .validJump(validJump),
+        .dataMemReadData(dataMemReadData),
+        .lastCarry(lastCarry)
 	);
 
 	initial begin
@@ -46,7 +55,7 @@ module KGPRISC_tb;
         #5 rst = 0;
 
 		// Wait 100 ns for global reset to finish
-		#100 $finish;
+		#1270 $finish;
         
 		// Add stimulus here
 

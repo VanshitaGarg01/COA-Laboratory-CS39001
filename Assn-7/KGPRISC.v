@@ -21,7 +21,9 @@
 module KGPRISC (
     input clk,
     input rst,
-    output [31:0] instruction, instrAddr, result, nextPC
+    output [31:0] instruction, instrAddr, result, nextPC, dataMemReadData,
+    output[4:0] ALUop,
+    output carry, zero, sign, validJump, lastCarry
 );
     wire [5:0] opcode;
     wire [4:0] func;
@@ -31,7 +33,7 @@ module KGPRISC (
     wire memWrite;
     wire [1:0] memToReg;
     wire ALUsrc;
-    wire [4:0] ALUop;
+//    wire [4:0] ALUop;
     wire ALUsel;
     wire branch;
     wire jumpAddr;
@@ -55,6 +57,11 @@ module KGPRISC (
     );
 
     datapath DP (
+        .dataMemReadData(dataMemReadData),
+        .carry(carry), 
+        .zero(zero), 
+        .sign(sign), 
+        .validJump(validJump),
         .opcode(opcode),
         .func(func),
         .regDst(regDst),
@@ -73,6 +80,7 @@ module KGPRISC (
         .instruction(instruction),
         .instrAddr(instrAddr),
         .result(result),
-        .nextPC(nextPC)
+        .nextPC(nextPC),
+        .lastCarry(lastCarry)
     );
 endmodule

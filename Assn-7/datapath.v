@@ -36,14 +36,15 @@ module datapath (
     output [5:0] opcode,
     output [4:0] func,
     output [31:0] instruction,//
-    output [31:0] instrAddr, result, nextPC//
+    output [31:0] instrAddr, result, nextPC,dataMemReadData,//
+    output carry, zero, sign, validJump, lastCarry
     
 );
     parameter ra = 5'b11111;
 
     wire enable;
-    wire carry, zero, sign, validJump;
-    wire [31:0] nextInstrAddr, writeData, readData1, readData2, SE1out, b, dataMemReadData;
+//    wire carry, zero, sign, validJump;
+    wire [31:0] nextInstrAddr, writeData, readData1, readData2, SE1out, b;//, dataMemReadData;
     wire [25:0] label0;
     wire [15:0] label1, imm;
     wire [4:0] rs, rt, shamt, writeReg;
@@ -51,6 +52,13 @@ module datapath (
     
     assign enable = memRead | memWrite;
     assign offset = nextInstrAddr >>> 2'b10;
+    
+    dff DFF (
+        .clk(clk),
+        .rst(rst),
+        .d(carry),
+        .q(lastCarry)
+    );
     
     program_counter PC (
         .nextInstrAddr(nextInstrAddr),
@@ -126,7 +134,7 @@ module datapath (
     jump_control JC (
         .opcode(opcode),
         .sign(sign),
-        .carry(carry),
+        .carry(lastCarry),
         .zero(zero),
         .validJump(validJump)
     );
@@ -149,10 +157,10 @@ module datapath (
     );
 
     bram_data_mem dataMemory (
-        .clka(clk),
+        .clka(~clk),
         .ena(enable),
         .wea(memWrite),
-        .addra(result[9:0]),
+        .addra(result[9:0] >>> 2'b10),
         .dina(readData2),
         .douta(dataMemReadData)
     );

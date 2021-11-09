@@ -55,6 +55,7 @@ module ALU (
         end else if (ALUop == 5'b00001) begin
             carry = carryTemp;
             result = adder1Out;
+            $display("opcode=%b", ALUop);
         end else if (ALUop == 5'b00101) begin
             result = adder1Out;
         end else if (ALUop == 5'b10101) begin
@@ -65,10 +66,12 @@ module ALU (
             result = xor1Out;
         end else if (ALUop[4:2] == 3'b010) begin
             result = barrelShifter1Out;
-        end else begin
+        end 
+        else begin
             result = 32'b00000000000000000000000000000000;
+            $display("***");
         end
-        $display($time, ", A = %b, a = %b, b = %b, notb = %b, result = %b", a, mux1Out, mux2Out, not1Out, result);
+        $display($time, ", A = %b, a = %b, b = %b, notb = %b, result = %b, carry = %b, cT = %b", a, mux1Out, mux2Out, not1Out, result, carry, carryTemp);
     end
 
     always @(result) begin

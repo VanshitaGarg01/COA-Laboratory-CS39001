@@ -1,0 +1,355 @@
+Release 14.7 - par P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Tue Nov  9 19:49:39 2021
+
+
+INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
+1. The <design name>_pad.txt file (this file) designed to provide information on IO usage in a human readable ASCII text format viewable through common text editors.
+2. The <design namd>_pad.csv file for use with spreadsheet programs such as MS Excel. This file can also be read by PACE to communicate post PAR IO information.
+3. The <design name>.pad file designed for parsing by customers.  It uses the "|" as a data field separator.
+
+INPUT FILE:       KGPRISC_map.ncd
+OUTPUT FILE:      KGPRISC_pad.txt
+PART TYPE:        xc7a100t
+SPEED GRADE:      -1
+PACKAGE:          csg324
+
+Pinout by Pin Number:
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|Pin Number|Signal Name        |Pin Usage|Pin Name                    |Direction|IO Standard|IO Bank Number|Drive (mA)|Slew Rate|Termination|IOB Delay|Voltage  |Constraint|IO Register|Signal Integrity|
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|A1        |instruction<8>     |IOB      |IO_L9N_T1_DQS_AD7N_35       |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|A2        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|A3        |instruction<7>     |IOB      |IO_L8N_T1_AD14N_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|A4        |instruction<9>     |IOB      |IO_L8P_T1_AD14P_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|A5        |instruction<0>     |IOB      |IO_L3N_T0_DQS_AD5N_35       |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|A6        |instruction<19>    |IOB      |IO_L3P_T0_DQS_AD5P_35       |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|A7        |                   |         |VCCO_35                     |         |           |35            |          |         |           |         |1.80     |          |           |                |
+|A8        |                   |IOB33S   |IO_L12N_T1_MRCC_16          |UNUSED   |           |16            |          |         |           |         |         |          |           |                |
+|A9        |                   |IOB33S   |IO_L14N_T2_SRCC_16          |UNUSED   |           |16            |          |         |           |         |         |          |           |                |
+|A10       |                   |IOB33M   |IO_L14P_T2_SRCC_16          |UNUSED   |           |16            |          |         |           |         |         |          |           |                |
+|A11       |instruction<18>    |IOB      |IO_L4N_T0_15                |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|A12       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|A13       |instrAddr<7>       |IOB      |IO_L9P_T1_DQS_AD3P_15       |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|A14       |instrAddr<4>       |IOB      |IO_L9N_T1_DQS_AD3N_15       |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|A15       |instruction<15>    |IOB      |IO_L8P_T1_AD10P_15          |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|A16       |instruction<6>     |IOB      |IO_L8N_T1_AD10N_15          |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|A17       |                   |         |VCCO_15                     |         |           |15            |          |         |           |         |1.80     |          |           |                |
+|A18       |instrAddr<9>       |IOB      |IO_L10N_T1_AD11N_15         |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|B1        |instruction<11>    |IOB      |IO_L9P_T1_DQS_AD7P_35       |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|B2        |instruction<13>    |IOB      |IO_L10N_T1_AD15N_35         |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|B3        |instrAddr<5>       |IOB      |IO_L10P_T1_AD15P_35         |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|B4        |instrAddr<2>       |IOB      |IO_L7N_T1_AD6N_35           |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|B5        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|B6        |instruction<4>     |IOB      |IO_L2N_T0_AD12N_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|B7        |instruction<2>     |IOB      |IO_L2P_T0_AD12P_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|B8        |                   |IOB33M   |IO_L12P_T1_MRCC_16          |UNUSED   |           |16            |          |         |           |         |         |          |           |                |
+|B9        |                   |IOB33S   |IO_L11N_T1_SRCC_16          |UNUSED   |           |16            |          |         |           |         |         |          |           |                |
+|B10       |                   |         |VCCO_16                     |         |           |16            |          |         |           |         |any******|          |           |                |
+|B11       |instruction<16>    |IOB      |IO_L4P_T0_15                |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|B12       |instruction<21>    |IOB      |IO_L3N_T0_DQS_AD1N_15       |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|B13       |ALUop<2>           |IOB      |IO_L2P_T0_AD8P_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|B14       |instruction<3>     |IOB      |IO_L2N_T0_AD8N_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|B15       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|B16       |instruction<12>    |IOB      |IO_L7P_T1_AD2P_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|B17       |instrAddr<3>       |IOB      |IO_L7N_T1_AD2N_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|B18       |instruction<22>    |IOB      |IO_L10P_T1_AD11P_15         |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|C1        |instrAddr<22>      |IOB      |IO_L16N_T2_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|C2        |result<1>          |IOB      |IO_L16P_T2_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|C3        |                   |         |VCCO_35                     |         |           |35            |          |         |           |         |1.80     |          |           |                |
+|C4        |instruction<20>    |IOB      |IO_L7P_T1_AD6P_35           |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|C5        |instruction<1>     |IOB      |IO_L1N_T0_AD4N_35           |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|C6        |instruction<17>    |IOB      |IO_L1P_T0_AD4P_35           |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|C7        |instrAddr<1>       |IOB      |IO_L4N_T0_35                |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|C8        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|C9        |                   |IOB33M   |IO_L11P_T1_SRCC_16          |UNUSED   |           |16            |          |         |           |         |         |          |           |                |
+|C10       |                   |IOB33S   |IO_L13N_T2_MRCC_16          |UNUSED   |           |16            |          |         |           |         |         |          |           |                |
+|C11       |                   |IOB33M   |IO_L13P_T2_MRCC_16          |UNUSED   |           |16            |          |         |           |         |         |          |           |                |
+|C12       |ALUop<4>           |IOB      |IO_L3P_T0_DQS_AD1P_15       |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|C13       |                   |         |VCCO_15                     |         |           |15            |          |         |           |         |1.80     |          |           |                |
+|C14       |ALUop<1>           |IOB      |IO_L1N_T0_AD0N_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|C15       |instrAddr<8>       |IOB      |IO_L12N_T1_MRCC_15          |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|C16       |instruction<28>    |IOB      |IO_L20P_T3_A20_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|C17       |rst                |IOB      |IO_L20N_T3_A19_15           |INPUT    |LVCMOS18*  |15            |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|C18       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|D1        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|D2        |instrAddr<17>      |IOB      |IO_L14N_T2_SRCC_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|D3        |instrAddr<12>      |IOB      |IO_L12N_T1_MRCC_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|D4        |instruction<10>    |IOB      |IO_L11N_T1_SRCC_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|D5        |clk                |IOB      |IO_L11P_T1_SRCC_35          |INPUT    |LVCMOS18*  |35            |          |         |           |NONE     |         |UNLOCATED |NO         |NONE            |
+|D6        |                   |         |VCCO_35                     |         |           |35            |          |         |           |         |1.80     |          |           |                |
+|D7        |instrAddr<0>       |IOB      |IO_L6N_T0_VREF_35           |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|D8        |nextPC<1>          |IOB      |IO_L4P_T0_35                |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|D9        |                   |IOB33S   |IO_L6N_T0_VREF_16           |UNUSED   |           |16            |          |         |           |         |         |          |           |                |
+|D10       |                   |IOB33S   |IO_L19N_T3_VREF_16          |UNUSED   |           |16            |          |         |           |         |         |          |           |                |
+|D11       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|D12       |instruction<23>    |IOB      |IO_L6P_T0_15                |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|D13       |instruction<5>     |IOB      |IO_L6N_T0_VREF_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|D14       |ALUop<0>           |IOB      |IO_L1P_T0_AD0P_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|D15       |instrAddr<14>      |IOB      |IO_L12P_T1_MRCC_15          |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|D16       |                   |         |VCCO_15                     |         |           |15            |          |         |           |         |1.80     |          |           |                |
+|D17       |result<4>          |IOB      |IO_L16N_T2_A27_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|D18       |instruction<30>    |IOB      |IO_L21N_T3_DQS_A18_15       |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|E1        |instrAddr<28>      |IOB      |IO_L18N_T2_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|E2        |instrAddr<16>      |IOB      |IO_L14P_T2_SRCC_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|E3        |instrAddr<6>       |IOB      |IO_L12P_T1_MRCC_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|E4        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|E5        |validJump          |IOB      |IO_L5N_T0_AD13N_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|E6        |lastCarry          |IOB      |IO_L5P_T0_AD13P_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
+|E7        |nextPC<0>          |IOB      |IO_L6P_T0_35                |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|E8        |                   |         |VCCBATT_0                   |         |           |              |          |         |           |         |         |          |           |                |
+|E9        |                   |         |CCLK_0                      |         |           |              |          |         |           |         |         |          |           |                |
+|E10       |                   |         |TCK_0                       |         |           |              |          |         |           |         |         |          |           |                |
+|E11       |                   |         |TDI_0                       |         |           |              |          |         |           |         |         |          |           |                |
+|E12       |                   |         |TMS_0                       |         |           |              |          |         |           |         |         |          |           |                |
+|E13       |                   |         |TDO_0                       |         |           |              |          |         |           |         |         |          |           |                |
+|E14       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|E15       |instrAddr<11>      |IOB      |IO_L11P_T1_SRCC_15          |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|E16       |instrAddr<13>      |IOB      |IO_L11N_T1_SRCC_15          |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|E17       |result<2>          |IOB      |IO_L16P_T2_A28_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|E18       |nextPC<9>          |IOB      |IO_L21P_T3_DQS_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|F1        |instrAddr<23>      |IOB      |IO_L18P_T2_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|F2        |                   |         |VCCO_35                     |         |           |35            |          |         |           |         |1.80     |          |           |                |
+|F3        |instrAddr<15>      |IOB      |IO_L13N_T2_MRCC_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|F4        |instruction<14>    |IOB      |IO_L13P_T2_MRCC_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|F5        |zero               |IOB      |IO_0_35                     |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|F6        |instrAddr<30>      |IOB      |IO_L19N_T3_VREF_35          |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|F7        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|F8        |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|F9        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|F10       |                   |         |VCCBRAM                     |         |           |              |          |         |           |         |         |          |           |                |
+|F11       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|F12       |                   |         |VCCAUX                      |         |           |              |          |         |           |         |1.8      |          |           |                |
+|F13       |instruction<25>    |IOB      |IO_L5P_T0_AD9P_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|F14       |instruction<27>    |IOB      |IO_L5N_T0_AD9N_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|F15       |nextPC<4>          |IOB      |IO_L14P_T2_SRCC_15          |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|F16       |nextPC<2>          |IOB      |IO_L14N_T2_SRCC_15          |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|F17       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|F18       |instrAddr<26>      |IOB      |IO_L22N_T3_A16_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|G1        |instrAddr<19>      |IOB      |IO_L17N_T2_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|G2        |instrAddr<20>      |IOB      |IO_L15N_T2_DQS_35           |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|G3        |instrAddr<29>      |IOB      |IO_L20N_T3_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|G4        |instrAddr<31>      |IOB      |IO_L20P_T3_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|G5        |                   |         |VCCO_35                     |         |           |35            |          |         |           |         |1.80     |          |           |                |
+|G6        |instrAddr<27>      |IOB      |IO_L19P_T3_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|G7        |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|G8        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|G9        |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|G10       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|G11       |                   |         |VCCBRAM                     |         |           |              |          |         |           |         |         |          |           |                |
+|G12       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|G13       |ALUop<3>           |IOB      |IO_0_15                     |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|G14       |instruction<24>    |IOB      |IO_L15N_T2_DQS_ADV_B_15     |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|G15       |                   |         |VCCO_15                     |         |           |15            |          |         |           |         |1.80     |          |           |                |
+|G16       |instrAddr<10>      |IOB      |IO_L13N_T2_MRCC_15          |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|G17       |instruction<26>    |IOB      |IO_L18N_T2_A23_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|G18       |nextPC<14>         |IOB      |IO_L22P_T3_A17_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|H1        |instrAddr<21>      |IOB      |IO_L17P_T2_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|H2        |instrAddr<18>      |IOB      |IO_L15P_T2_DQS_35           |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|H3        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|H4        |instrAddr<24>      |IOB      |IO_L21N_T3_DQS_35           |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|H5        |nextPC<7>          |IOB      |IO_L24N_T3_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|H6        |nextPC<8>          |IOB      |IO_L24P_T3_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|H7        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|H8        |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|H9        |                   |         |GNDADC_0                    |         |           |              |          |         |           |         |         |          |           |                |
+|H10       |                   |         |VCCADC_0                    |         |           |              |          |         |           |         |         |          |           |                |
+|H11       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|H12       |                   |         |VCCAUX                      |         |           |              |          |         |           |         |1.8      |          |           |                |
+|H13       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|H14       |result<6>          |IOB      |IO_L15P_T2_DQS_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|H15       |instruction<29>    |IOB      |IO_L19N_T3_A21_VREF_15      |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|H16       |nextPC<6>          |IOB      |IO_L13P_T2_MRCC_15          |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|H17       |instruction<31>    |IOB      |IO_L18P_T2_A24_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|H18       |                   |         |VCCO_15                     |         |           |15            |          |         |           |         |1.80     |          |           |                |
+|J1        |                   |         |VCCO_35                     |         |           |35            |          |         |           |         |1.80     |          |           |                |
+|J2        |nextPC<18>         |IOB      |IO_L22N_T3_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|J3        |nextPC<15>         |IOB      |IO_L22P_T3_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|J4        |instrAddr<25>      |IOB      |IO_L21P_T3_DQS_35           |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|J5        |nextPC<5>          |IOB      |IO_25_35                    |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|J6        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|J7        |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|J8        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|J9        |                   |         |VREFN_0                     |         |           |              |          |         |           |         |         |          |           |                |
+|J10       |                   |IPAD     |VP_0                        |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
+|J11       |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|J12       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|J13       |result<0>          |IOB      |IO_L17N_T2_A25_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|J14       |carry              |IOB      |IO_L19P_T3_A22_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |YES        |NONE            |
+|J15       |result<8>          |IOB      |IO_L24N_T3_RS0_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|J16       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|J17       |nextPC<11>         |IOB      |IO_L23P_T3_FOE_B_15         |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|J18       |nextPC<10>         |IOB      |IO_L23N_T3_FWE_B_15         |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|K1        |nextPC<12>         |IOB      |IO_L23N_T3_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|K2        |nextPC<13>         |IOB      |IO_L23P_T3_35               |OUTPUT   |LVCMOS18*  |35            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|K3        |result<13>         |IOB      |IO_L2P_T0_34                |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|K4        |                   |         |VCCO_34                     |         |           |34            |          |         |           |         |1.80     |          |           |                |
+|K5        |result<19>         |IOB      |IO_L5P_T0_34                |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|K6        |nextPC<16>         |IOB      |IO_0_34                     |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|K7        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|K8        |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|K9        |                   |IPAD     |VN_0                        |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
+|K10       |                   |         |VREFP_0                     |         |           |              |          |         |           |         |         |          |           |                |
+|K11       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|K12       |                   |         |VCCAUX                      |         |           |              |          |         |           |         |1.8      |          |           |                |
+|K13       |result<5>          |IOB      |IO_L17P_T2_A26_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|K14       |                   |         |VCCO_15                     |         |           |15            |          |         |           |         |1.80     |          |           |                |
+|K15       |result<7>          |IOB      |IO_L24P_T3_RS1_15           |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|K16       |result<3>          |IOB      |IO_25_15                    |OUTPUT   |LVCMOS18*  |15            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|K17       |result<11>         |IOB      |IO_L1P_T0_D00_MOSI_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|K18       |result<12>         |IOB      |IO_L1N_T0_D01_DIN_14        |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|L1        |nextPC<17>         |IOB      |IO_L1P_T0_34                |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|L2        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|L3        |nextPC<20>         |IOB      |IO_L2N_T0_34                |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|L4        |result<20>         |IOB      |IO_L5N_T0_34                |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|L5        |result<22>         |IOB      |IO_L6N_T0_VREF_34           |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|L6        |result<21>         |IOB      |IO_L6P_T0_34                |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|L7        |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|L8        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|L9        |                   |         |DXN_0                       |         |           |              |          |         |           |         |         |          |           |                |
+|L10       |                   |         |DXP_0                       |         |           |              |          |         |           |         |         |          |           |                |
+|L11       |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|L12       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|L13       |nextPC<23>         |IOB      |IO_L6P_T0_FCS_B_14          |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|L14       |result<9>          |IOB      |IO_L2P_T0_D02_14            |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|L15       |result<15>         |IOB      |IO_L3P_T0_DQS_PUDC_B_14     |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|L16       |nextPC<22>         |IOB      |IO_L3N_T0_DQS_EMCCLK_14     |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|L17       |                   |         |VCCO_14                     |         |           |14            |          |         |           |         |1.80     |          |           |                |
+|L18       |nextPC<19>         |IOB      |IO_L4P_T0_D04_14            |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|M1        |nextPC<3>          |IOB      |IO_L1N_T0_34                |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|M2        |result<18>         |IOB      |IO_L4N_T0_34                |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|M3        |result<17>         |IOB      |IO_L4P_T0_34                |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|M4        |                   |IOB33M   |IO_L16P_T2_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|M5        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|M6        |                   |IOB33M   |IO_L18P_T2_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|M7        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|M8        |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|M9        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|M10       |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|M11       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|M12       |                   |         |VCCAUX                      |         |           |              |          |         |           |         |1.8      |          |           |                |
+|M13       |nextPC<28>         |IOB      |IO_L6N_T0_D08_VREF_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|M14       |result<14>         |IOB      |IO_L2N_T0_D03_14            |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|M15       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|M16       |nextPC<31>         |IOB      |IO_L10P_T1_D14_14           |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|M17       |dataMemReadData<4> |IOB      |IO_L10N_T1_D15_14           |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|M18       |nextPC<24>         |IOB      |IO_L4N_T0_D05_14            |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|N1        |result<16>         |IOB      |IO_L3N_T0_DQS_34            |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|N2        |nextPC<21>         |IOB      |IO_L3P_T0_DQS_34            |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|N3        |                   |         |VCCO_34                     |         |           |34            |          |         |           |         |1.80     |          |           |                |
+|N4        |                   |IOB33S   |IO_L16N_T2_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|N5        |                   |IOB33M   |IO_L13P_T2_MRCC_34          |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|N6        |                   |IOB33S   |IO_L18N_T2_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|N7        |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|N8        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|N9        |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|N10       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|N11       |                   |         |VCCINT                      |         |           |              |          |         |           |         |1.0      |          |           |                |
+|N12       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|N13       |                   |         |VCCO_14                     |         |           |14            |          |         |           |         |1.80     |          |           |                |
+|N14       |nextPC<27>         |IOB      |IO_L8P_T1_D11_14            |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|N15       |dataMemReadData<5> |IOB      |IO_L11P_T1_SRCC_14          |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|N16       |dataMemReadData<6> |IOB      |IO_L11N_T1_SRCC_14          |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|N17       |dataMemReadData<1> |IOB      |IO_L9P_T1_DQS_14            |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|N18       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|P1        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|P2        |                   |IOB33M   |IO_L15P_T2_DQS_34           |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|P3        |                   |IOB33S   |IO_L14N_T2_SRCC_34          |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|P4        |                   |IOB33M   |IO_L14P_T2_SRCC_34          |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|P5        |                   |IOB33S   |IO_L13N_T2_MRCC_34          |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|P6        |                   |         |VCCO_34                     |         |           |34            |          |         |           |         |1.80     |          |           |                |
+|P7        |                   |         |INIT_B_0                    |         |           |              |          |         |           |         |         |          |           |                |
+|P8        |                   |         |CFGBVS_0                    |         |           |              |          |         |           |         |         |          |           |                |
+|P9        |                   |         |PROGRAM_B_0                 |         |           |              |          |         |           |         |         |          |           |                |
+|P10       |                   |         |DONE_0                      |         |           |              |          |         |           |         |         |          |           |                |
+|P11       |                   |         |M2_0                        |         |           |              |          |         |           |         |         |          |           |                |
+|P12       |                   |         |M0_0                        |         |           |              |          |         |           |         |         |          |           |                |
+|P13       |                   |         |M1_0                        |         |           |              |          |         |           |         |         |          |           |                |
+|P14       |dataMemReadData<0> |IOB      |IO_L8N_T1_D12_14            |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|P15       |dataMemReadData<9> |IOB      |IO_L13P_T2_MRCC_14          |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|P16       |                   |         |VCCO_14                     |         |           |14            |          |         |           |         |1.80     |          |           |                |
+|P17       |dataMemReadData<3> |IOB      |IO_L12P_T1_MRCC_14          |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|P18       |dataMemReadData<2> |IOB      |IO_L9N_T1_DQS_D13_14        |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|R1        |                   |IOB33M   |IO_L17P_T2_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|R2        |                   |IOB33S   |IO_L15N_T2_DQS_34           |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|R3        |result<31>         |IOB      |IO_L11P_T1_SRCC_34          |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|R4        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|R5        |                   |IOB33S   |IO_L19N_T3_VREF_34          |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|R6        |                   |IOB33M   |IO_L19P_T3_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|R7        |                   |IOB33M   |IO_L23P_T3_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|R8        |                   |IOB33M   |IO_L24P_T3_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|R9        |                   |         |VCCO_0                      |         |           |0             |          |         |           |         |any******|          |           |                |
+|R10       |                   |IOB33    |IO_25_14                    |UNUSED   |           |14            |          |         |           |         |         |          |           |                |
+|R11       |result<10>         |IOB      |IO_0_14                     |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|R12       |nextPC<25>         |IOB      |IO_L5P_T0_D06_14            |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|R13       |nextPC<26>         |IOB      |IO_L5N_T0_D07_14            |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|R14       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|R15       |dataMemReadData<10>|IOB      |IO_L13N_T2_MRCC_14          |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|R16       |dataMemReadData<13>|IOB      |IO_L15P_T2_DQS_RDWR_B_14    |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|R17       |dataMemReadData<8> |IOB      |IO_L12N_T1_MRCC_14          |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|R18       |nextPC<29>         |IOB      |IO_L7P_T1_D09_14            |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|T1        |                   |IOB33S   |IO_L17N_T2_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|T2        |                   |         |VCCO_34                     |         |           |34            |          |         |           |         |1.80     |          |           |                |
+|T3        |sign               |IOB      |IO_L11N_T1_SRCC_34          |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|T4        |                   |IOB33S   |IO_L12N_T1_MRCC_34          |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|T5        |                   |IOB33M   |IO_L12P_T1_MRCC_34          |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|T6        |                   |IOB33S   |IO_L23N_T3_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|T7        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|T8        |                   |IOB33S   |IO_L24N_T3_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|T9        |dataMemReadData<31>|IOB      |IO_L24P_T3_A01_D17_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|T10       |dataMemReadData<27>|IOB      |IO_L24N_T3_A00_D16_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|T11       |dataMemReadData<21>|IOB      |IO_L19P_T3_A10_D26_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|T12       |                   |         |VCCO_14                     |         |           |14            |          |         |           |         |1.80     |          |           |                |
+|T13       |dataMemReadData<29>|IOB      |IO_L23P_T3_A03_D19_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|T14       |dataMemReadData<7> |IOB      |IO_L14P_T2_SRCC_14          |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|T15       |dataMemReadData<12>|IOB      |IO_L14N_T2_SRCC_14          |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|T16       |dataMemReadData<14>|IOB      |IO_L15N_T2_DQS_DOUT_CSO_B_14|OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|T17       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|T18       |nextPC<30>         |IOB      |IO_L7N_T1_D10_14            |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|U1        |result<23>         |IOB      |IO_L7P_T1_34                |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|U2        |result<27>         |IOB      |IO_L9P_T1_DQS_34            |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|U3        |result<26>         |IOB      |IO_L8N_T1_34                |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|U4        |result<25>         |IOB      |IO_L8P_T1_34                |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|U5        |                   |         |VCCO_34                     |         |           |34            |          |         |           |         |1.80     |          |           |                |
+|U6        |                   |IOB33S   |IO_L22N_T3_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|U7        |                   |IOB33M   |IO_L22P_T3_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|U8        |                   |IOB33    |IO_25_34                    |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|U9        |                   |IOB33M   |IO_L21P_T3_DQS_34           |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|U10       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|U11       |dataMemReadData<22>|IOB      |IO_L19N_T3_A09_D25_VREF_14  |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|U12       |dataMemReadData<19>|IOB      |IO_L20P_T3_A08_D24_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|U13       |dataMemReadData<30>|IOB      |IO_L23N_T3_A02_D18_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|U14       |dataMemReadData<23>|IOB      |IO_L22P_T3_A05_D21_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|U15       |                   |         |VCCO_14                     |         |           |14            |          |         |           |         |1.80     |          |           |                |
+|U16       |dataMemReadData<15>|IOB      |IO_L18P_T2_A12_D28_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|U17       |dataMemReadData<17>|IOB      |IO_L17P_T2_A14_D30_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|U18       |dataMemReadData<18>|IOB      |IO_L17N_T2_A13_D29_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|V1        |result<24>         |IOB      |IO_L7N_T1_34                |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|V2        |result<28>         |IOB      |IO_L9N_T1_DQS_34            |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|V3        |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|V4        |result<30>         |IOB      |IO_L10N_T1_34               |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|V5        |result<29>         |IOB      |IO_L10P_T1_34               |OUTPUT   |LVCMOS18*  |34            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|V6        |                   |IOB33S   |IO_L20N_T3_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|V7        |                   |IOB33M   |IO_L20P_T3_34               |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|V8        |                   |         |VCCO_34                     |         |           |34            |          |         |           |         |1.80     |          |           |                |
+|V9        |                   |IOB33S   |IO_L21N_T3_DQS_34           |UNUSED   |           |34            |          |         |           |         |         |          |           |                |
+|V10       |dataMemReadData<25>|IOB      |IO_L21P_T3_DQS_14           |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|V11       |dataMemReadData<26>|IOB      |IO_L21N_T3_DQS_A06_D22_14   |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|V12       |dataMemReadData<24>|IOB      |IO_L20N_T3_A07_D23_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|V13       |                   |         |GND                         |         |           |              |          |         |           |         |         |          |           |                |
+|V14       |dataMemReadData<28>|IOB      |IO_L22N_T3_A04_D20_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|V15       |dataMemReadData<11>|IOB      |IO_L16P_T2_CSI_B_14         |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|V16       |dataMemReadData<16>|IOB      |IO_L16N_T2_A15_D31_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|V17       |dataMemReadData<20>|IOB      |IO_L18N_T2_A11_D27_14       |OUTPUT   |LVCMOS18*  |14            |12        |SLOW     |           |         |         |UNLOCATED |NO         |NONE            |
+|V18       |                   |         |VCCO_14                     |         |           |14            |          |         |           |         |1.80     |          |           |                |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Default value.
+** This default Pullup/Pulldown value can be overridden in Bitgen. 
+All RSVD_0 pins must be tied to GROUND.
+****** Special VCCO requirements may apply. Please consult the device 
+       family datasheet for specific guideline on VCCO requirements. 
+
+

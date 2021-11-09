@@ -26,9 +26,11 @@ module immediate_sign_extend (
 );
     always @(*) begin
         if (opcode == 6'b000010) begin
-            extendImm = {{27{instr[15]}}, instr[15:11]};
+            extendImm = {{27{1'b0}}, instr[15:11]};
+            $display ("%b, %d", instr[15:11], extendImm);
         end else begin
             extendImm = {{16{instr[15]}}, instr};
         end
+        
     end
 endmodule

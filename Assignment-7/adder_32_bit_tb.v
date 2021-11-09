@@ -17,9 +17,7 @@ module adder_32_bit_tb;
         $monitor("A = %d, B = %d, c_in = %b, sum = %d, c_out = %b", A, B, c_in, sum, c_out);
         
         // Stimulus to verify the working of the 32-bit ripple carry adder
-        #5 A = 32'd1024; B = 32'd4096;
-        #5 A = 32'd34343434; B = 32'd8123659;
-        #5 A = 32'd4294967295; B = 32'd4294967295;
+        #5 A = 32'b10000000000000000000000000000000; B = 32'b10000000000000000000000000000000;
         #5 $finish;
     end
 endmodule
