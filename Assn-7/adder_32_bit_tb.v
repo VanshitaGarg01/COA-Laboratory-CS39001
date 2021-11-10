@@ -1,26 +1,5 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   21:22:50 11/07/2021
-// Design Name:   adder_32_bit
-// Module Name:   /home/vanshita/COA-Laboratory-CS39001/Assn-7/adder_32_bit_tb.v
-// Project Name:  Assn-7
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: adder_32_bit
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
 // Testbench for the 32-bit ripple carry adder module
 module adder_32_bit_tb;
 

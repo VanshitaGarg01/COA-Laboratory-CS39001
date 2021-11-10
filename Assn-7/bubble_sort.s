@@ -1,7 +1,7 @@
 main:
     xor $20, $20    # base address of array = 0 ($20)
     xor $21, $21
-    addi $21, 5     # $21 = n = 5
+    addi $21, 10    # $21 = n = 10
     xor $8, $8      # $8 = i = 0
     xor $9, $9      # $9 = j = 0
 
@@ -12,6 +12,7 @@ fori:
     add $10, $11
     addi $10, 1     # $10 = i - (n - 1) = i - n + 1
     bz $10, exitfori
+    xor $9, $9
 
 forj:
     xor $11, $11    # label 44
@@ -31,9 +32,10 @@ forj:
     xor $5, $5
     add $5, $12
 
-    comp $15, $13
-    add $14, $15        # arr[j + 1] - arr[j]
-    bltz $14, incj
+    comp $15, $14
+    add $13, $15        # arr[j] - arr[j + 1]
+    bltz $13, incj      # swap if arr[j] > arr[j + 1]
+    bz $13, incj
     bl swap
 
 incj:
@@ -53,7 +55,4 @@ exitforj:
 
 exitfori:
     xor $16, $16        # label 39*4
-    addi $16, 42
-    xor $17, $17
-    addi $17, 45
-    and $17, $16
+    addi $16, 1

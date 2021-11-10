@@ -1,23 +1,5 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    01:33:56 11/08/2021 
-// Design Name: 
-// Module Name:    register_file 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module register_file (
     input [4:0] rs,
     input [4:0] rt,
@@ -30,7 +12,7 @@ module register_file (
     output reg [31:0] readData2
 );
 
-    reg [31:0] registerBank [31:0];
+    reg signed [31:0] registerBank [31:0];
     integer i;
 
     always @(posedge clk or posedge rst) begin
@@ -40,9 +22,6 @@ module register_file (
         end else if (regWrite) begin
             registerBank[writeReg] <= writeData;
         end 
-        
-        //sfds
-        $display ($time, ", writeReg = %d, wrteData = %d, regWrite = %b", writeReg, writeData, regWrite);
     end
 
     always @(*) begin

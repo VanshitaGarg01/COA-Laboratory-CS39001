@@ -1,26 +1,5 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   21:12:09 11/07/2021
-// Design Name:   barrel_shifter
-// Module Name:   /home/vanshita/COA-Laboratory-CS39001/Assn-7/lookahead_carry_unit_tb.v
-// Project Name:  Assn-7
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: barrel_shifter
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
 // Testbench for Look-ahead carry unit module
 module lookahead_carry_unit_tb;
 

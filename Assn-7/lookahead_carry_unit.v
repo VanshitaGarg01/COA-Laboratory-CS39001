@@ -1,25 +1,13 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    21:11:29 11/07/2021 
-// Design Name: 
-// Module Name:    lookahead_carry_unit 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 // Look-ahead carry unit module
-module lookahead_carry_unit(p, g, c_in, c, c_out, P, G);
+module lookahead_carry_unit(
+    input [3:0] p, 
+    input [3:0] g, 
+    input c_in, 
+    output [3:0] c, 
+    output c_out
+);
     /*
       Input and output ports :
       p - block propagate from the previous level
@@ -30,10 +18,6 @@ module lookahead_carry_unit(p, g, c_in, c, c_out, P, G);
       P - block propagate for the next level
       G - block generate for the next level
     */ 
-    input [3:0] p, g;
-    input c_in;
-    output [3:0] c;
-    output c_out, P, G;
 
     // compute the carry bits
     assign c[0] = c_in;
@@ -42,8 +26,5 @@ module lookahead_carry_unit(p, g, c_in, c, c_out, P, G);
     assign c[3] = g[2] | (p[2] & g[1]) | (p[2] & p[1] & g[0]) | (p[2] & p[1] & p[0] & c[0]);
     assign c_out = g[3] | (p[3] & g[2]) | (p[3] & p[2] & g[1]) | (p[3] & p[2] & p[1] & g[0]) | (p[3] & p[2] & p[1] & p[0] & c[0]);
 
-    // compute block propagate and generate for the next level
-    assign P = p[3] & p[2] & p[1] & p[0];
-    assign G = g[3] | (p[3] & g[2]) | (p[3] & p[2] & g[1]) | (p[3] & p[2] & p[1] & g[0]);
 endmodule
 

@@ -26,7 +26,7 @@ static unsigned int ng1[] = {4U, 0U};
 
 
 
-static void Cont_26_0(char *t0)
+static void Cont_8_0(char *t0)
 {
     char t4[8];
     char *t1;
@@ -46,7 +46,7 @@ LAB0:    t1 = (t0 + 2360U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(26, ng0);
+LAB2:    xsi_set_current_line(8, ng0);
     t2 = (t0 + 1048U);
     t3 = *((char **)t2);
     t2 = ((char*)((ng1)));
@@ -68,7 +68,7 @@ LAB1:    return;
 
 extern void work_m_05450344764791039037_2370168646_init()
 {
-	static char *pe[] = {(void *)Cont_26_0};
+	static char *pe[] = {(void *)Cont_8_0};
 	xsi_register_didat("work_m_05450344764791039037_2370168646", "isim/KGPRISC_tb_isim_beh.exe.sim/work/m_05450344764791039037_2370168646.didat");
 	xsi_register_executes(pe);
 }

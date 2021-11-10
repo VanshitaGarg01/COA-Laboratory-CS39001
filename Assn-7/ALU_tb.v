@@ -1,26 +1,5 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   21:53:31 11/07/2021
-// Design Name:   ALU
-// Module Name:   /home/vanshita/COA-Laboratory-CS39001/Assn-7/ALU_tb.v
-// Project Name:  Assn-7
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: ALU
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
 module ALU_tb;
     
     // Inputs

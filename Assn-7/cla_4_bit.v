@@ -1,25 +1,13 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    21:07:21 11/07/2021 
-// Design Name: 
-// Module Name:    cla_4_bit 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 // 4-bit carry look-ahead adder module which computes block propagate and generate for the next level of hierarchy
-module cla_4_bit(a, b, c_in, sum, c_out, P, G);
+module cla_4_bit(
+    input [3:0] a,
+    input [3:0] b, 
+    input c_in, 
+    input [3:0] sum, 
+    output c_out, P, G
+);
     /*
       Input and output ports :
       a - first 4-bit input
@@ -30,10 +18,7 @@ module cla_4_bit(a, b, c_in, sum, c_out, P, G);
       P - block propagate for the next level of hierarchy
       G - block generate for the next level of hierarchy
     */ 
-    input [3:0] a, b;
-    input c_in;
-    output [3:0] sum;
-    output c_out, P, G;
+    
     wire [3:0] p, g;        // propagate and generate bits 
     wire [3:0] c;           // carry bits
 

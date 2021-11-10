@@ -1,23 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    01:48:58 11/08/2021 
-// Design Name: 
-// Module Name:    datapath 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
 
 module datapath (
     input [1:0] regDst,
@@ -34,17 +15,17 @@ module datapath (
     input clk,
     input rst,
     output [5:0] opcode,
-    output [4:0] func,
-    output [31:0] instruction,//
-    output [31:0] instrAddr, result, nextPC,dataMemReadData,//
-    output carry, zero, sign, validJump, lastCarry
+    output [4:0] func
+//    output [31:0] instruction,//
+//    output [31:0] instrAddr, result, nextPC,dataMemReadData
+//    output carry, zero, sign, validJump
     
 );
     parameter ra = 5'b11111;
 
     wire enable;
-//    wire carry, zero, sign, validJump;
-    wire [31:0] nextInstrAddr, writeData, readData1, readData2, SE1out, b;//, dataMemReadData;
+    wire carry, zero, sign, validJump, lastCarry;
+    wire [31:0] nextInstrAddr, instruction, writeData, readData1, instrAddr, result, nextPC, readData2, SE1out, b, dataMemReadData;
     wire [25:0] label0;
     wire [15:0] label1, imm;
     wire [4:0] rs, rt, shamt, writeReg;

@@ -1,26 +1,5 @@
 `timescale 1ns / 1ps
 
-////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer:
-//
-// Create Date:   21:08:17 11/07/2021
-// Design Name:   barrel_shifter
-// Module Name:   /home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_4_bit_tb.v
-// Project Name:  Assn-7
-// Target Device:  
-// Tool versions:  
-// Description: 
-//
-// Verilog Test Fixture created by ISE for module: barrel_shifter
-//
-// Dependencies:
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-////////////////////////////////////////////////////////////////////////////////
 // Testbench for 4-bit carry look-ahead adder module with augmentation to compute next level block generate and propagate
 module cla_4_bit_tb;
 

@@ -1,29 +1,9 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date:    01:48:40 11/08/2021 
-// Design Name: 
-// Module Name:    KGPRISC 
-// Project Name: 
-// Target Devices: 
-// Tool versions: 
-// Description: 
-//
-// Dependencies: 
-//
-// Revision: 
-// Revision 0.01 - File Created
-// Additional Comments: 
-//
-//////////////////////////////////////////////////////////////////////////////////
+
 module KGPRISC (
     input clk,
-    input rst,
-    output [31:0] instruction, instrAddr, result, nextPC, dataMemReadData,
-    output[4:0] ALUop,
-    output carry, zero, sign, validJump, lastCarry
+    input rst
+//    output [31:0] instruction, instrAddr, result, nextPC, dataMemReadData
 );
     wire [5:0] opcode;
     wire [4:0] func;
@@ -33,11 +13,12 @@ module KGPRISC (
     wire memWrite;
     wire [1:0] memToReg;
     wire ALUsrc;
-//    wire [4:0] ALUop;
+    wire [4:0] ALUop;
     wire ALUsel;
     wire branch;
     wire jumpAddr;
     wire lblSel;
+//    output carry, zero, sign, validJump, lastCarry
     
 
     control_unit CU (
@@ -57,11 +38,11 @@ module KGPRISC (
     );
 
     datapath DP (
-        .dataMemReadData(dataMemReadData),
-        .carry(carry), 
-        .zero(zero), 
-        .sign(sign), 
-        .validJump(validJump),
+//        .dataMemReadData(dataMemReadData),
+//        .carry(carry), 
+//        .zero(zero), 
+//        .sign(sign), 
+//        .validJump(validJump),
         .opcode(opcode),
         .func(func),
         .regDst(regDst),
@@ -76,11 +57,11 @@ module KGPRISC (
         .jumpAddr(jumpAddr),
         .lblSel(lblSel),
         .clk(clk),
-        .rst(rst),
-        .instruction(instruction),
-        .instrAddr(instrAddr),
-        .result(result),
-        .nextPC(nextPC),
-        .lastCarry(lastCarry)
+        .rst(rst)
+//        .instruction(instruction),
+//        .instrAddr(instrAddr),
+//        .result(result),
+//        .nextPC(nextPC),
+//        .lastCarry(lastCarry)
     );
 endmodule
