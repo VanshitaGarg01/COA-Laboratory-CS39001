@@ -18,3 +18,4 @@ xst -intstyle ise -ifn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC.xst
 netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim KGPRISC.ngc KGPRISC_synthesis.v 
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc7a100t-csg324-1 KGPRISC.ngc KGPRISC.ngd  
 map -intstyle ise -p xc7a100t-csg324-1 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -mt off -ir off -pr off -lc off -power off -o KGPRISC_map.ncd KGPRISC.ngd KGPRISC.pcf 
+xst -intstyle ise -ifn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC.xst" -ofn "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC.syr" 

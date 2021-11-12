@@ -55,7 +55,7 @@
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>work</CurrentItem>
    </ItemView>
-   <SourceProcessView>000000ff0000000000000002000001a00000007101000000060100000002</SourceProcessView>
+   <SourceProcessView>000000ff000000000000000200000193000000f601000000060100000002</SourceProcessView>
    <CurrentView>Behavioral Simulation</CurrentView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VERILOG" guiview="Process" >
       <ClosedNodes>
@@ -69,35 +69,34 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Generate Post-Synthesis Simulation Model</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000020d000000010000000100000000000000000000000064ffffffff0000008100000000000000010000020d0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Generate Post-Synthesis Simulation Model</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/ALU |home|vanshita|COA-Laboratory-CS39001|Assn-7|ALU.v</ClosedNode>
-         <ClosedNode>/ALU_tb |home|vanshita|COA-Laboratory-CS39001|Assn-7|ALU_tb.v/ALU1 - ALU/adder1 - adder_32_bit</ClosedNode>
+         <ClosedNode>/ALU_tb |home|vanshita|COA-Laboratory-CS39001|Assn-7|ALU_tb.v/ALU1 - ALU/adder1 - adder_32_bit/CLA2 - cla_16_bit</ClosedNode>
          <ClosedNode>/adder_32_bit |home|vanshita|COA-Laboratory-CS39001|Assn-7|adder_32_bit.v</ClosedNode>
          <ClosedNode>/adder_32_bit_tb |home|vanshita|COA-Laboratory-CS39001|Assn-7|adder_32_bit_tb.v</ClosedNode>
          <ClosedNode>/barrel_shifter_tb |home|vanshita|COA-Laboratory-CS39001|Assn-7|barrel_shifter_tb.v</ClosedNode>
          <ClosedNode>/cla_16_bit |home|vanshita|COA-Laboratory-CS39001|Assn-7|cla_16_bit.v</ClosedNode>
          <ClosedNode>/cla_16_bit_tb |home|vanshita|COA-Laboratory-CS39001|Assn-7|cla_16_bit_tb.v</ClosedNode>
          <ClosedNode>/cla_4_bit_tb |home|vanshita|COA-Laboratory-CS39001|Assn-7|cla_4_bit_tb.v</ClosedNode>
-         <ClosedNode>/lookahead_carry_unit_tb |home|vanshita|COA-Laboratory-CS39001|Assn-7|lookahead_carry_unit_tb.v</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>KGPRISC_tb (/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC_tb.v)</SelectedItem>
+         <SelectedItem>registerFile1 - register_file (/home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file.v)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >54</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000218000000020000000000000000000000000200000064ffffffff000000810000000300000002000002180000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>KGPRISC_tb (/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC_tb.v)</CurrentItem>
+      <CurrentItem>registerFile1 - register_file (/home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -109,7 +108,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000020d000000010000000100000000000000000000000064ffffffff0000008100000000000000010000020d0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000021c000000010000000100000000000000000000000064ffffffff0000008100000000000000010000021c0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>
@@ -118,26 +117,26 @@
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Simulate Behavioral Model</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >1</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000020d000000010000000100000000000000000000000064ffffffff0000008100000000000000010000020d0000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000021c000000010000000100000000000000000000000064ffffffff0000008100000000000000010000021c0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Simulate Behavioral Model</CurrentItem>
    </ItemView>
    <ItemView engineview="BehavioralSim" sourcetype="DESUT_XCO" guiview="Process" >
       <ClosedNodes>
          <ClosedNodesVersion>1</ClosedNodesVersion>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem/>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000000000000000000021c000000010000000100000000000000000000000064ffffffff0000008100000000000000010000021c0000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem/>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_XCO" guiview="Process" >
       <ClosedNodes>

@@ -25,7 +25,7 @@ static const char *ng0 = "/home/vanshita/COA-Laboratory-CS39001/Assn-7/lookahead
 
 
 
-static void Cont_23_0(char *t0)
+static void Cont_21_0(char *t0)
 {
     char *t1;
     char *t2;
@@ -51,7 +51,7 @@ LAB0:    t1 = (t0 + 2840U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(23, ng0);
+LAB2:    xsi_set_current_line(21, ng0);
     t2 = (t0 + 1368U);
     t3 = *((char **)t2);
     t2 = (t0 + 4296);
@@ -79,7 +79,7 @@ LAB2:    xsi_set_current_line(23, ng0);
 LAB1:    return;
 }
 
-static void Cont_24_1(char *t0)
+static void Cont_22_1(char *t0)
 {
     char t4[8];
     char t14[8];
@@ -194,7 +194,7 @@ LAB0:    t1 = (t0 + 3088U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(24, ng0);
+LAB2:    xsi_set_current_line(22, ng0);
     t2 = (t0 + 1208U);
     t3 = *((char **)t2);
     memset(t4, 0, 8);
@@ -341,7 +341,7 @@ LAB7:    t76 = *((unsigned int *)t64);
 
 }
 
-static void Cont_25_2(char *t0)
+static void Cont_23_2(char *t0)
 {
     char t4[8];
     char t14[8];
@@ -578,7 +578,7 @@ LAB0:    t1 = (t0 + 3336U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(25, ng0);
+LAB2:    xsi_set_current_line(23, ng0);
     t2 = (t0 + 1208U);
     t3 = *((char **)t2);
     memset(t4, 0, 8);
@@ -890,7 +890,7 @@ LAB16:    t198 = *((unsigned int *)t186);
 
 }
 
-static void Cont_26_3(char *t0)
+static void Cont_24_3(char *t0)
 {
     char t4[8];
     char t14[8];
@@ -1291,7 +1291,7 @@ LAB0:    t1 = (t0 + 3584U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(26, ng0);
+LAB2:    xsi_set_current_line(24, ng0);
     t2 = (t0 + 1208U);
     t3 = *((char **)t2);
     memset(t4, 0, 8);
@@ -1825,7 +1825,7 @@ LAB28:    t362 = *((unsigned int *)t350);
 
 }
 
-static void Cont_27_4(char *t0)
+static void Cont_25_4(char *t0)
 {
     char t4[8];
     char t14[8];
@@ -2432,7 +2432,7 @@ LAB0:    t1 = (t0 + 3832U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(27, ng0);
+LAB2:    xsi_set_current_line(25, ng0);
     t2 = (t0 + 1208U);
     t3 = *((char **)t2);
     memset(t4, 0, 8);
@@ -3248,7 +3248,7 @@ LAB43:    t568 = *((unsigned int *)t556);
 
 extern void work_m_13619067931086296977_0597495051_init()
 {
-	static char *pe[] = {(void *)Cont_23_0,(void *)Cont_24_1,(void *)Cont_25_2,(void *)Cont_26_3,(void *)Cont_27_4};
+	static char *pe[] = {(void *)Cont_21_0,(void *)Cont_22_1,(void *)Cont_23_2,(void *)Cont_24_3,(void *)Cont_25_4};
 	xsi_register_didat("work_m_13619067931086296977_0597495051", "isim/KGPRISC_tb_isim_beh.exe.sim/work/m_13619067931086296977_0597495051.didat");
 	xsi_register_executes(pe);
 }

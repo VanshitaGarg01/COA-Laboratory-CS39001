@@ -25,7 +25,7 @@ static const char *ng0 = "/home/vanshita/COA-Laboratory-CS39001/Assn-7/instructi
 
 
 
-static void Cont_15_0(char *t0)
+static void Cont_24_0(char *t0)
 {
     char t3[8];
     char *t1;
@@ -60,7 +60,7 @@ LAB0:    t1 = (t0 + 3480U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(15, ng0);
+LAB2:    xsi_set_current_line(24, ng0);
     t2 = (t0 + 1048U);
     t4 = *((char **)t2);
     memset(t3, 0, 8);
@@ -101,7 +101,7 @@ LAB2:    xsi_set_current_line(15, ng0);
 LAB1:    return;
 }
 
-static void Cont_16_1(char *t0)
+static void Cont_25_1(char *t0)
 {
     char t3[8];
     char *t1;
@@ -136,7 +136,7 @@ LAB0:    t1 = (t0 + 3728U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(16, ng0);
+LAB2:    xsi_set_current_line(25, ng0);
     t2 = (t0 + 1048U);
     t4 = *((char **)t2);
     memset(t3, 0, 8);
@@ -177,7 +177,7 @@ LAB2:    xsi_set_current_line(16, ng0);
 LAB1:    return;
 }
 
-static void Cont_17_2(char *t0)
+static void Cont_26_2(char *t0)
 {
     char t3[8];
     char *t1;
@@ -212,7 +212,7 @@ LAB0:    t1 = (t0 + 3976U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(17, ng0);
+LAB2:    xsi_set_current_line(26, ng0);
     t2 = (t0 + 1048U);
     t4 = *((char **)t2);
     memset(t3, 0, 8);
@@ -253,7 +253,7 @@ LAB2:    xsi_set_current_line(17, ng0);
 LAB1:    return;
 }
 
-static void Cont_18_3(char *t0)
+static void Cont_27_3(char *t0)
 {
     char t3[8];
     char *t1;
@@ -288,7 +288,7 @@ LAB0:    t1 = (t0 + 4224U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(18, ng0);
+LAB2:    xsi_set_current_line(27, ng0);
     t2 = (t0 + 1048U);
     t4 = *((char **)t2);
     memset(t3, 0, 8);
@@ -329,7 +329,7 @@ LAB2:    xsi_set_current_line(18, ng0);
 LAB1:    return;
 }
 
-static void Cont_19_4(char *t0)
+static void Cont_28_4(char *t0)
 {
     char t3[8];
     char *t1;
@@ -364,7 +364,7 @@ LAB0:    t1 = (t0 + 4472U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(19, ng0);
+LAB2:    xsi_set_current_line(28, ng0);
     t2 = (t0 + 1048U);
     t4 = *((char **)t2);
     memset(t3, 0, 8);
@@ -405,7 +405,7 @@ LAB2:    xsi_set_current_line(19, ng0);
 LAB1:    return;
 }
 
-static void Cont_20_5(char *t0)
+static void Cont_29_5(char *t0)
 {
     char t3[8];
     char *t1;
@@ -440,7 +440,7 @@ LAB0:    t1 = (t0 + 4720U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(20, ng0);
+LAB2:    xsi_set_current_line(29, ng0);
     t2 = (t0 + 1048U);
     t4 = *((char **)t2);
     memset(t3, 0, 8);
@@ -481,7 +481,7 @@ LAB2:    xsi_set_current_line(20, ng0);
 LAB1:    return;
 }
 
-static void Cont_21_6(char *t0)
+static void Cont_30_6(char *t0)
 {
     char t3[8];
     char *t1;
@@ -516,7 +516,7 @@ LAB0:    t1 = (t0 + 4968U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(21, ng0);
+LAB2:    xsi_set_current_line(30, ng0);
     t2 = (t0 + 1048U);
     t4 = *((char **)t2);
     memset(t3, 0, 8);
@@ -557,7 +557,7 @@ LAB2:    xsi_set_current_line(21, ng0);
 LAB1:    return;
 }
 
-static void Cont_22_7(char *t0)
+static void Cont_31_7(char *t0)
 {
     char t3[8];
     char *t1;
@@ -592,7 +592,7 @@ LAB0:    t1 = (t0 + 5216U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(22, ng0);
+LAB2:    xsi_set_current_line(31, ng0);
     t2 = (t0 + 1048U);
     t4 = *((char **)t2);
     memset(t3, 0, 8);
@@ -636,7 +636,7 @@ LAB1:    return;
 
 extern void work_m_01440325637087849116_3945777025_init()
 {
-	static char *pe[] = {(void *)Cont_15_0,(void *)Cont_16_1,(void *)Cont_17_2,(void *)Cont_18_3,(void *)Cont_19_4,(void *)Cont_20_5,(void *)Cont_21_6,(void *)Cont_22_7};
+	static char *pe[] = {(void *)Cont_24_0,(void *)Cont_25_1,(void *)Cont_26_2,(void *)Cont_27_3,(void *)Cont_28_4,(void *)Cont_29_5,(void *)Cont_30_6,(void *)Cont_31_7};
 	xsi_register_didat("work_m_01440325637087849116_3945777025", "isim/KGPRISC_tb_isim_beh.exe.sim/work/m_01440325637087849116_3945777025.didat");
 	xsi_register_executes(pe);
 }

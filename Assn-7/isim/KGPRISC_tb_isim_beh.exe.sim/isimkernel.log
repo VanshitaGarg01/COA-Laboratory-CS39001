@@ -2,12 +2,12 @@ Command line:
    KGPRISC_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  50023
+     -socket  49093
 
-Wed Nov 10 22:49:04 2021
+Thu Nov 11 21:24:47 2021
 
 
- Elaboration Time: 0.03 sec
+ Elaboration Time: 0.04 sec
 
  Current Memory Usage: 188.219 Meg
 
@@ -21,9 +21,9 @@ Wed Nov 10 22:49:04 2021
  Total Scalar Nets and Variables : 113659
 Total Line Count : 1358
 
- Total Simulation Time: 0.23 sec
+ Total Simulation Time: 0.18 sec
 
  Current Memory Usage: 263.721 Meg
 
-Wed Nov 10 22:50:02 2021
+Thu Nov 11 21:25:22 2021
 

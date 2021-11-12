@@ -25,7 +25,7 @@ static const char *ng0 = "/home/vanshita/COA-Laboratory-CS39001/Assn-7/shifter.v
 
 
 
-static void Always_11_0(char *t0)
+static void Always_21_0(char *t0)
 {
     char t11[8];
     char t29[8];
@@ -64,7 +64,7 @@ LAB0:    t1 = (t0 + 2840U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(11, ng0);
+LAB2:    xsi_set_current_line(21, ng0);
     t2 = (t0 + 3160);
     *((int *)t2) = 1;
     t3 = (t0 + 2872);
@@ -72,9 +72,9 @@ LAB2:    xsi_set_current_line(11, ng0);
     *((char **)t1) = &&LAB4;
 
 LAB1:    return;
-LAB4:    xsi_set_current_line(11, ng0);
+LAB4:    xsi_set_current_line(21, ng0);
 
-LAB5:    xsi_set_current_line(12, ng0);
+LAB5:    xsi_set_current_line(22, ng0);
     t4 = (t0 + 1528U);
     t5 = *((char **)t4);
     t4 = (t5 + 4);
@@ -86,9 +86,9 @@ LAB5:    xsi_set_current_line(12, ng0);
     if (t10 > 0)
         goto LAB6;
 
-LAB7:    xsi_set_current_line(18, ng0);
+LAB7:    xsi_set_current_line(28, ng0);
 
-LAB19:    xsi_set_current_line(19, ng0);
+LAB19:    xsi_set_current_line(29, ng0);
     t2 = (t0 + 1368U);
     t3 = *((char **)t2);
     memset(t11, 0, 8);
@@ -117,9 +117,9 @@ LAB23:    t5 = (t11 + 4);
     if (t18 > 0)
         goto LAB24;
 
-LAB25:    xsi_set_current_line(21, ng0);
+LAB25:    xsi_set_current_line(31, ng0);
 
-LAB28:    xsi_set_current_line(22, ng0);
+LAB28:    xsi_set_current_line(32, ng0);
     t2 = (t0 + 1048U);
     t3 = *((char **)t2);
     t2 = (t0 + 1208U);
@@ -132,9 +132,9 @@ LAB28:    xsi_set_current_line(22, ng0);
 LAB26:
 LAB8:    goto LAB2;
 
-LAB6:    xsi_set_current_line(12, ng0);
+LAB6:    xsi_set_current_line(22, ng0);
 
-LAB9:    xsi_set_current_line(13, ng0);
+LAB9:    xsi_set_current_line(23, ng0);
     t12 = (t0 + 1368U);
     t13 = *((char **)t12);
     memset(t11, 0, 8);
@@ -163,9 +163,9 @@ LAB13:    t20 = (t11 + 4);
     if (t25 > 0)
         goto LAB14;
 
-LAB15:    xsi_set_current_line(15, ng0);
+LAB15:    xsi_set_current_line(25, ng0);
 
-LAB18:    xsi_set_current_line(16, ng0);
+LAB18:    xsi_set_current_line(26, ng0);
     t2 = (t0 + 1048U);
     t3 = *((char **)t2);
     t2 = (t0 + 1928);
@@ -176,9 +176,9 @@ LAB16:    goto LAB8;
 LAB10:    *((unsigned int *)t11) = 1;
     goto LAB13;
 
-LAB14:    xsi_set_current_line(13, ng0);
+LAB14:    xsi_set_current_line(23, ng0);
 
-LAB17:    xsi_set_current_line(14, ng0);
+LAB17:    xsi_set_current_line(24, ng0);
     t26 = (t0 + 1048U);
     t27 = *((char **)t26);
     t26 = (t0 + 1208U);
@@ -192,9 +192,9 @@ LAB17:    xsi_set_current_line(14, ng0);
 LAB20:    *((unsigned int *)t11) = 1;
     goto LAB23;
 
-LAB24:    xsi_set_current_line(19, ng0);
+LAB24:    xsi_set_current_line(29, ng0);
 
-LAB27:    xsi_set_current_line(20, ng0);
+LAB27:    xsi_set_current_line(30, ng0);
     t12 = (t0 + 1048U);
     t13 = *((char **)t12);
     t12 = (t0 + 1208U);
@@ -210,7 +210,7 @@ LAB27:    xsi_set_current_line(20, ng0);
 
 extern void work_m_14301112680459747475_2207681426_init()
 {
-	static char *pe[] = {(void *)Always_11_0};
+	static char *pe[] = {(void *)Always_21_0};
 	xsi_register_didat("work_m_14301112680459747475_2207681426", "isim/KGPRISC_tb_isim_beh.exe.sim/work/m_14301112680459747475_2207681426.didat");
 	xsi_register_executes(pe);
 }

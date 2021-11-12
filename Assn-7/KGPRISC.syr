@@ -171,7 +171,7 @@ Elaborating module <bram_instr_mem>.
 WARNING:HDLCompiler:1499 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/bram_instr_mem.v" Line 39: Empty module <bram_instr_mem> remains a black box.
 
 Elaborating module <instruction_decode>.
-WARNING:HDLCompiler:1127 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.v" Line 66: Assignment to shamt ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.v" Line 73: Assignment to shamt ignored, since the identifier is never used
 
 Elaborating module <mux_5b_3_1>.
 
@@ -188,7 +188,7 @@ Elaborating module <adder_32_bit>.
 Elaborating module <cla_16_bit>.
 
 Elaborating module <cla_4_bit>.
-WARNING:HDLCompiler:1127 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_4_bit.v" Line 35: Assignment to sum ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_4_bit.v" Line 42: Assignment to sum ignored, since the identifier is never used
 
 Elaborating module <lookahead_carry_unit>.
 
@@ -224,7 +224,7 @@ Unit <control_unit> synthesized.
 Synthesizing Unit <datapath>.
     Related source file is "/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.v".
         ra = 5'b11111
-INFO:Xst:3210 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.v" line 58: Output port <shamt> of the instance <instructionDecoder> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/datapath.v" line 65: Output port <shamt> of the instance <instructionDecoder> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <datapath> synthesized.
@@ -251,7 +251,7 @@ Unit <instruction_decode> synthesized.
 
 Synthesizing Unit <mux_5b_3_1>.
     Related source file is "/home/vanshita/COA-Laboratory-CS39001/Assn-7/mux_5b_3_1.v".
-    Found 5-bit 3-to-1 multiplexer for signal <out> created at line 19.
+    Found 5-bit 3-to-1 multiplexer for signal <out> created at line 26.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mux_5b_3_1> synthesized.
@@ -259,8 +259,8 @@ Unit <mux_5b_3_1> synthesized.
 Synthesizing Unit <register_file>.
     Related source file is "/home/vanshita/COA-Laboratory-CS39001/Assn-7/register_file.v".
     Found 1024-bit register for signal <n0043[1023:0]>.
-    Found 32-bit 32-to-1 multiplexer for signal <readData1> created at line 28.
-    Found 32-bit 32-to-1 multiplexer for signal <readData2> created at line 29.
+    Found 32-bit 32-to-1 multiplexer for signal <readData1> created at line 35.
+    Found 32-bit 32-to-1 multiplexer for signal <readData2> created at line 36.
     Summary:
 	inferred 1024 D-type flip-flop(s).
 	inferred  34 Multiplexer(s).
@@ -297,10 +297,10 @@ Unit <adder_32_bit> synthesized.
 Synthesizing Unit <cla_16_bit>.
     Related source file is "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v".
         k = 1'b1
-INFO:Xst:3210 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v" line 26: Output port <c_out> of the instance <cla1> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v" line 27: Output port <c_out> of the instance <cla2> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v" line 28: Output port <c_out> of the instance <cla3> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v" line 29: Output port <c_out> of the instance <cla4> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v" line 33: Output port <c_out> of the instance <cla1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v" line 34: Output port <c_out> of the instance <cla2> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v" line 35: Output port <c_out> of the instance <cla3> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_16_bit.v" line 36: Output port <c_out> of the instance <cla4> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <cla_16_bit> synthesized.
@@ -308,7 +308,7 @@ Unit <cla_16_bit> synthesized.
 Synthesizing Unit <cla_4_bit>.
     Related source file is "/home/vanshita/COA-Laboratory-CS39001/Assn-7/cla_4_bit.v".
 WARNING:Xst:647 - Input <sum> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 1-bit adder for signal <c_out> created at line 42.
+    Found 1-bit adder for signal <c_out> created at line 49.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 Unit <cla_4_bit> synthesized.
@@ -321,9 +321,9 @@ Unit <lookahead_carry_unit> synthesized.
 
 Synthesizing Unit <shifter>.
     Related source file is "/home/vanshita/COA-Laboratory-CS39001/Assn-7/shifter.v".
-    Found 32-bit shifter arithmetic right for signal <in[31]_shamt[31]_shift_right_0_OUT> created at line 14
-    Found 32-bit shifter logical right for signal <in[31]_shamt[31]_shift_right_2_OUT> created at line 20
-    Found 32-bit shifter logical left for signal <in[31]_shamt[31]_shift_left_3_OUT> created at line 22
+    Found 32-bit shifter arithmetic right for signal <in[31]_shamt[31]_shift_right_0_OUT> created at line 21
+    Found 32-bit shifter logical right for signal <in[31]_shamt[31]_shift_right_2_OUT> created at line 27
+    Found 32-bit shifter logical left for signal <in[31]_shamt[31]_shift_left_3_OUT> created at line 29
     Summary:
 	inferred   6 Multiplexer(s).
 	inferred   3 Combinational logic shifter(s).
@@ -337,7 +337,7 @@ Unit <jump_control> synthesized.
 
 Synthesizing Unit <PC_increment>.
     Related source file is "/home/vanshita/COA-Laboratory-CS39001/Assn-7/PC_increment.v".
-    Found 32-bit adder for signal <nextPC> created at line 8.
+    Found 32-bit adder for signal <nextPC> created at line 15.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 Unit <PC_increment> synthesized.
@@ -350,7 +350,7 @@ Unit <branch_unit> synthesized.
 
 Synthesizing Unit <mux_32b_3_1>.
     Related source file is "/home/vanshita/COA-Laboratory-CS39001/Assn-7/mux_32b_3_1.v".
-    Found 32-bit 3-to-1 multiplexer for signal <out> created at line 19.
+    Found 32-bit 3-to-1 multiplexer for signal <out> created at line 26.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mux_32b_3_1> synthesized.
@@ -650,12 +650,12 @@ clk                                |    9.279|         |    3.836|         |
 
 
 Total REAL time to Xst completion: 24.00 secs
-Total CPU time to Xst completion: 23.83 secs
+Total CPU time to Xst completion: 23.70 secs
  
 --> 
 
 
-Total memory usage is 502372 kilobytes
+Total memory usage is 502384 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    8 (   0 filtered)

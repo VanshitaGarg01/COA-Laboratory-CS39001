@@ -25,7 +25,7 @@ static const char *ng0 = "/home/vanshita/COA-Laboratory-CS39001/Assn-7/mux_32b_2
 
 
 
-static void Cont_18_0(char *t0)
+static void Cont_19_0(char *t0)
 {
     char t3[8];
     char t4[8];
@@ -62,7 +62,7 @@ LAB0:    t1 = (t0 + 2680U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(18, ng0);
+LAB2:    xsi_set_current_line(19, ng0);
     t2 = (t0 + 1368U);
     t5 = *((char **)t2);
     memset(t4, 0, 8);
@@ -138,7 +138,7 @@ LAB14:    memcpy(t3, t17, 8);
 
 extern void work_m_07578242916647320557_2227945711_init()
 {
-	static char *pe[] = {(void *)Cont_18_0};
+	static char *pe[] = {(void *)Cont_19_0};
 	xsi_register_didat("work_m_07578242916647320557_2227945711", "isim/KGPRISC_tb_isim_beh.exe.sim/work/m_07578242916647320557_2227945711.didat");
 	xsi_register_executes(pe);
 }

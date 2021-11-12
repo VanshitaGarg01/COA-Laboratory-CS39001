@@ -26,7 +26,7 @@ static unsigned int ng1[] = {4U, 0U};
 
 
 
-static void Always_10_0(char *t0)
+static void Always_19_0(char *t0)
 {
     char t11[8];
     char *t1;
@@ -49,7 +49,7 @@ LAB0:    t1 = (t0 + 2680U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(10, ng0);
+LAB2:    xsi_set_current_line(19, ng0);
     t2 = (t0 + 3000);
     *((int *)t2) = 1;
     t3 = (t0 + 2712);
@@ -57,9 +57,9 @@ LAB2:    xsi_set_current_line(10, ng0);
     *((char **)t1) = &&LAB4;
 
 LAB1:    return;
-LAB4:    xsi_set_current_line(10, ng0);
+LAB4:    xsi_set_current_line(19, ng0);
 
-LAB5:    xsi_set_current_line(11, ng0);
+LAB5:    xsi_set_current_line(20, ng0);
     t4 = (t0 + 1368U);
     t5 = *((char **)t4);
     t4 = (t5 + 4);
@@ -71,9 +71,9 @@ LAB5:    xsi_set_current_line(11, ng0);
     if (t10 > 0)
         goto LAB6;
 
-LAB7:    xsi_set_current_line(13, ng0);
+LAB7:    xsi_set_current_line(22, ng0);
 
-LAB10:    xsi_set_current_line(14, ng0);
+LAB10:    xsi_set_current_line(23, ng0);
     t2 = (t0 + 1048U);
     t3 = *((char **)t2);
     t2 = (t0 + 1768);
@@ -81,9 +81,9 @@ LAB10:    xsi_set_current_line(14, ng0);
 
 LAB8:    goto LAB2;
 
-LAB6:    xsi_set_current_line(11, ng0);
+LAB6:    xsi_set_current_line(20, ng0);
 
-LAB9:    xsi_set_current_line(12, ng0);
+LAB9:    xsi_set_current_line(21, ng0);
     t12 = ((char*)((ng1)));
     memset(t11, 0, 8);
     xsi_vlog_unsigned_unary_minus(t11, 32, t12, 32);
@@ -96,7 +96,7 @@ LAB9:    xsi_set_current_line(12, ng0);
 
 extern void work_m_07275095380913999386_3381898454_init()
 {
-	static char *pe[] = {(void *)Always_10_0};
+	static char *pe[] = {(void *)Always_19_0};
 	xsi_register_didat("work_m_07275095380913999386_3381898454", "isim/KGPRISC_tb_isim_beh.exe.sim/work/m_07275095380913999386_3381898454.didat");
 	xsi_register_executes(pe);
 }

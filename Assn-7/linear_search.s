@@ -29,13 +29,13 @@ fori:
     b fori
 
 found: 
-    xor $20, $20
-    add $20, $8
+    xor $19, $19
+    add $19, $8
     b exit
 
 notFound:
-    xor $20, $20
-    addi $20, -1
+    xor $19, $19
+    addi $19, -1
 
 exit:
     xor $16, $16
