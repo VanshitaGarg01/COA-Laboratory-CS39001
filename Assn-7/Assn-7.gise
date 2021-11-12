@@ -193,7 +193,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1636646081" xil_pn:in_ck="-1039635586879903133" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1636646081">
+    <transform xil_pn:end_ts="1636746024" xil_pn:in_ck="-1039635586879903133" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1636746024">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ALU.v"/>
@@ -237,7 +237,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1636718779" xil_pn:in_ck="2340112391561920024" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-6179077420763880946" xil_pn:start_ts="1636718779">
+    <transform xil_pn:end_ts="1636746024" xil_pn:in_ck="2340112391561920024" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-6179077420763880946" xil_pn:start_ts="1636746024">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="bram_data_mem.ngc"/>
@@ -245,7 +245,7 @@
       <outfile xil_pn:name="bram_instr_mem.ngc"/>
       <outfile xil_pn:name="bram_instr_mem.v"/>
     </transform>
-    <transform xil_pn:end_ts="1636718779" xil_pn:in_ck="4562819577357224659" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1636718779">
+    <transform xil_pn:end_ts="1636746024" xil_pn:in_ck="4562819577357224659" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1636746024">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="ALU.v"/>
@@ -283,7 +283,7 @@
       <outfile xil_pn:name="shifter.v"/>
       <outfile xil_pn:name="shifter_tb.v"/>
     </transform>
-    <transform xil_pn:end_ts="1636718783" xil_pn:in_ck="4562819577357224659" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4278012674866672333" xil_pn:start_ts="1636718779">
+    <transform xil_pn:end_ts="1636746027" xil_pn:in_ck="4562819577357224659" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="4278012674866672333" xil_pn:start_ts="1636746024">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -295,9 +295,11 @@
       <outfile xil_pn:name="isim.log"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1636718784" xil_pn:in_ck="8928307365215291119" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-2613953064156383740" xil_pn:start_ts="1636718783">
+    <transform xil_pn:end_ts="1636746027" xil_pn:in_ck="8928307365215291119" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-2613953064156383740" xil_pn:start_ts="1636746027">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="KGPRISC_tb_isim_beh.wdb"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>

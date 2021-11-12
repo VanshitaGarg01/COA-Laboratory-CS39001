@@ -17,4 +17,7 @@ Block Memory Generator CORE Generator module KGPRISC_tb.uut.DP.instructionMemory
  Block Memory Generator data initialization complete.
 Block Memory Generator CORE Generator module KGPRISC_tb.uut.DP.dataMemory.inst.\native_mem_module.blk_mem_gen_v7_3_inst  is using a behavioral model for simulation which will not precisely model memory collision behavior.
 Finished circuit initialization process.
-Stopped at time : 3710 ns : File "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC_tb.v" Line 44
+Content in register 19:           7
+Element found at index:           7
+Stopped at time : 2910 ns : File "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC_tb.v" Line 37
+# exit 0

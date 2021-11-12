@@ -29,8 +29,8 @@ Analyzing Verilog file "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC_tb.
 Analyzing Verilog file "/home/vanshita/Downloads/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 85292 KB
-Fuse CPU Usage: 1180 ms
+Fuse Memory Usage: 85296 KB
+Fuse CPU Usage: 1200 ms
 Compiling module control_unit
 Compiling module dff
 Compiling module program_counter
@@ -63,9 +63,9 @@ Compiling module KGPRISC
 Compiling module KGPRISC_tb
 Compiling module glbl
 Time Resolution for simulation is 1ps.
-Waiting for 21 sub-compilation(s) to finish...
+Waiting for 24 sub-compilation(s) to finish...
 Compiled 31 Verilog Units
 Built simulation executable /home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC_tb_isim_beh.exe
 Fuse Memory Usage: 648748 KB
-Fuse CPU Usage: 1300 ms
-GCC CPU Usage: 3770 ms
+Fuse CPU Usage: 1330 ms
+GCC CPU Usage: 3480 ms

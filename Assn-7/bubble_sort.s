@@ -1,12 +1,12 @@
 main:
-    xor $20, $20    # base address of array = 0 ($20)
+    xor $20, $20            # base address of array = 0 ($20)
     xor $21, $21
-    addi $21, 10    # $21 = n = 10
-    xor $8, $8      # $8 = i = 0
-    xor $9, $9      # $9 = j = 0
+    addi $21, 10            # $21 = n = 10
+    xor $8, $8              # $8 = i = 0
+    xor $9, $9              # $9 = j = 0
 
 fori:
-    xor $10, $10    # label 20
+    xor $10, $10            # label 20
     add $10, $8
     comp $11, $21
     add $10, $11
@@ -24,7 +24,7 @@ forj:
     add $12, $9
     shll $12, 2     # 4 * j
     add $12, $20    # arr + 4 * j
-    lw $13, 0($12)   # $13 = arr[j]
+    lw $13, 0($12)   # $13 = arr[j] 
     xor $4, $4
     add $4, $12
     addi $12, 4
