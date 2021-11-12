@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC_tb_isim_beh.exe" -prj "/home/vanshita/COA-Laboratory-CS39001/Assn-7/KGPRISC_tb_beh.prj" "work.KGPRISC_tb" "work.glbl" 
